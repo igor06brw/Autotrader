@@ -6,13 +6,23 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './header/navigation/navigation.component';
 import { SearchCarComponent } from './search-car/search-car.component';
+import { RandomCarsComponent } from './random-cars/random-cars.component';
+import { RandomCarTwoComponent } from './random-car-two/random-car-two.component';
+import { ReviewNewestCarComponent } from './review-newest-car/review-newest-car.component';
+import { ShowColorsOfCarComponent } from './show-colors-of-car/show-colors-of-car.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavigationComponent,
-    SearchCarComponent
+    SearchCarComponent,
+    RandomCarsComponent,
+    RandomCarTwoComponent,
+    ReviewNewestCarComponent,
+    ShowColorsOfCarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
