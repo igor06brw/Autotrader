@@ -9,6 +9,7 @@ import { SearchCarComponent } from './search-car/search-car.component';
 import { RandomCarsComponent } from './random-cars/random-cars.component';
 import { RandomCarTwoComponent } from './random-car-two/random-car-two.component';
 import { ReviewNewestCarComponent } from './review-newest-car/review-newest-car.component';
+import { ShowColorsOfCarComponent } from './show-colors-of-car/show-colors-of-car.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReviewNewestCarComponent } from './review-newest-car/review-newest-car.
     SearchCarComponent,
     RandomCarsComponent,
     RandomCarTwoComponent,
-    ReviewNewestCarComponent
+    ReviewNewestCarComponent,
+    ShowColorsOfCarComponent
   ],
   imports: [
     BrowserModule,
