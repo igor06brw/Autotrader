@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './header/navigation/navigation.component';
 import { SearchCarComponent } from './search-car/search-car.component';
 import { RandomCarsComponent } from './random-cars/random-cars.component';
+import { RandomCarTwoComponent } from './random-car-two/random-car-two.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { RandomCarsComponent } from './random-cars/random-cars.component';
     HeaderComponent,
     NavigationComponent,
     SearchCarComponent,
-    RandomCarsComponent
+    RandomCarsComponent,
+    RandomCarTwoComponent
   ],
   imports: [
     BrowserModule,
