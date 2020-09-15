@@ -1,0 +1,25 @@
+
+.navigation {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    &__logo {
+        &-image {
+    
+        }
+        &-container {
+    
+        }
+    }
+    &__list {
+        list-style: none;
+        &-element {
+            
+            margin: 0 5px;
+            display: inline-block;
+            &__link { 
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
