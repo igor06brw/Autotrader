@@ -1,32 +1,46 @@
 
 .navigation {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    background-color: rgba(0,0,0,0.8);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,0.75);
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 550px 550px;
+        height: 110px;
+        align-items: center;
+    }
     &__logo {
+
         &-image {
-    
+            
         }
         &-container {
-    
         }
     }
     &__list {
         display: flex;
-        align-items: center;
+        justify-content: flex-end;
         list-style: none;
     }
 
     &__element { 
         margin: 0 10px;
         display: inline-block;
+
+    }
+    &__buttons-wrapper {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 60% 40%;
     }
     &__link { 
         text-decoration: none;
         text-transform: uppercase;
         color: #fff;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 0.8em;
         letter-spacing: 1px;
 
         &:focus {
@@ -35,12 +49,16 @@
         }
 
         &--red {     
-            padding: 10px 20px;
-            margin-left: 30px;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            padding: 7px 0px;
             background-color: rgb(255, 46, 46);
             font-weight: 700;
             transition: background-color .15s ease-out;
-            
+            font-size: 0.85rem;
+            margin: auto 0 auto 30px;
+
 
             &:hover {
                 background-color: rgb(109, 18, 18);
@@ -51,6 +69,9 @@
             }
         }
         &--plus {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 1.4rem;
             font-weight: 700;
         }
     }
