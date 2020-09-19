@@ -3,3 +3,33 @@
     background-color: #fff;
     max-width: 1170px;
 }
+.search-car__form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.search-car__form-wrapper {
+    padding:  30px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-car__input-label {
+    color: #2c3966;
+    font-size: 20px;
+    font-weight: 700;
+}
+.search-car__input {
+    height: 30px;
+    width: 250px;
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    font-size: 1rem;
+
+    & > * {
+        background: #fff;
+        color: rgb(105, 105, 105);
+        font-size: 1rem;
+    }
+}
