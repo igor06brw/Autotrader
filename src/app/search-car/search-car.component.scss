@@ -5,7 +5,7 @@
     margin: 0 auto;
 
     position: absolute;
-    top: 120px;
+    top: 80px;
     bottom:0;
     left:50%;
     right:0;
@@ -13,8 +13,13 @@
     transform: translate(-50%);
     
     max-width: 1170px;
-    width: 90%;
+    width: 70%;
     
+}
+.search-car {
+    &__content {
+        
+    }
 }
 .search-car__wrapper {
     background-color: #fff;
@@ -24,13 +29,23 @@
 .search-car__form {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .search-car__form-wrapper {
-    padding:  40px 40px;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
+
+    &:nth-last-of-type(n+5) {
+        padding: 40px 10px 10px 10px;
+        width: 500px;
+    }
+    &:nth-of-type(n+3) {
+        padding: 10px 10px 40px 10px;
+        width: 250px;
+    }
 }
 
 .search-car__input-label {
@@ -42,7 +57,7 @@
 .search-car__input {
     margin-left: 5px;
     height: 40px;
-    width: 250px;
+    // width: 240px;
     border: 2px solid #fff;
     box-shadow: 0px 0px  4px 0px rgba(0, 0, 0, 0.281);
     font-size: 1rem;
