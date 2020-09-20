@@ -82,10 +82,10 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 20px 0;
+        margin-top: 20px;
     }
     &__car-wrapper {
-        width: 33.33%;
+        width: 24.35em;
         padding: 20px;
         border-bottom: 1px solid rgb(114, 114, 114, 0.2);
     }
@@ -105,12 +105,25 @@
         &:nth-of-type(2) {
             width: 25%;
         }
+        &:last-of-type {
+            text-align: right;
+        }
     }
     &__car-heading {
         font-size: 0.8em;
     }
     &__car-description {
-        font-size: 0.8em;
+        font-size: 0.7em;
         word-wrap: break-word;
+    }
+    &__car-price {
+        font-size: 0.85em;
+        font-weight: 700;
+    }
+    &__car-miles {
+        font-size: 0.85em;
+    }
+    &__car-production {
+        font-size: 0.85em;
     }
 }
