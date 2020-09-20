@@ -26,56 +26,54 @@
         background: #2c3966;
         margin-top: 25px;
     }
-}
-.search-car__wrapper {
-    background-color: #fff;
-    max-width: 1170px;
-    width: 100%;
-}
-.search-car__form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.search-car__form-wrapper {
-    padding: 10px 10px;
-    display: flex;
-    flex-direction: column;
-
-    &:nth-last-of-type(n+5) {
-        padding: 40px 10px 10px 10px;
-        width: 44%;
-        min-width: 16em;
+    &__wrapper {
+        background-color: #fff;
+        max-width: 1170px;
+        width: 100%;
     }
-    &:nth-of-type(n+3) {
-        padding: 10px 10px 40px 10px;
-        width: 22%;
-        min-width: 8em;
+    &__form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
     }
-    &:nth-last-of-type() {
-        margin-top: 40px;
+    &__form-wrapper {
+        padding: 10px 10px;
+        display: flex;
+        flex-direction: column;
+    
+        &:nth-last-of-type(n+5) {
+            padding: 40px 10px 10px 10px;
+            width: 44%;
+            min-width: 16em;
+        }
+        &:nth-of-type(n+3) {
+            padding: 10px 10px 40px 10px;
+            width: 22%;
+            min-width: 8em;
+        }
+        &:nth-last-of-type() {
+            margin-top: 40px;
+        }
     }
-}
-
-.search-car__input-label {
-    color: #2c3966;
-    font-size: 0.8rem;
-    padding-bottom: 10px;
-    font-weight: 700;
-}
-.search-car__input {
-    margin-left: 5px;
-    height: 40px;
-    // width: 240px;
-    border: 2px solid #fff;
-    box-shadow: 0px 0px  4px 0px rgba(0, 0, 0, 0.281);
-    font-size: 1rem;
-
-    & > * {
-        background: #fff;
-        color: rgb(105, 105, 105);
+    &__input-label {
+        color: #2c3966;
+        font-size: 0.8rem;
+        padding-bottom: 10px;
+        font-weight: 700;
+    }
+    &__input {
+        margin-left: 5px;
+        height: 40px;
+        // width: 240px;
+        border: 2px solid #fff;
+        box-shadow: 0px 0px  4px 0px rgba(0, 0, 0, 0.281);
         font-size: 1rem;
+    
+        & > * {
+            background: #fff;
+            color: rgb(105, 105, 105);
+            font-size: 1rem;
+        }
     }
 }
