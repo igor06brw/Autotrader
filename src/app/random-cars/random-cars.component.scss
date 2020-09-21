@@ -16,11 +16,6 @@
             grid-area: highlight;
         }
     }
-    @for $i from 2 through 4{
-        &__link:nth-of-type(#{$i}) {
-            grid-area: link + ($i);
-        }
-    }
         
     &__car-wrapper {
         display: grid;
