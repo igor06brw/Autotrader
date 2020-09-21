@@ -1,0 +1,30 @@
+.random-cars {
+    &__section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+
+        max-width: 1170px;
+        width: 100%;
+    }
+    &__car-image {
+        width: 100%;
+    }
+    &__link {
+        &:first-of-type {
+            grid-area: highlight;
+        }
+    }
+    @for $i from 2 through 4{
+        &__link:nth-of-type(#{$i}) {
+            grid-area: link + ($i);
+        }
+    }
+        
+    &__car-wrapper {
+        display: grid;
+        grid-template-areas: 'highlight link2 link3'
+                             'highlight link4 link5'
+    }
+}
