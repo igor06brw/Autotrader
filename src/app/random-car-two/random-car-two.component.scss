@@ -1,0 +1,75 @@
+.random-cars-two {
+    &__section {
+        background-color: rgb(138, 138, 138);
+        justify-content: center;
+        margin: 8em auto ;
+        padding: 5em 0;
+        width: 100%;
+    }
+    &__car-image {
+        width: 100%;
+    }
+    &__wrapper {
+
+        &-car {
+            display: flex;
+            flex-direction: row;  
+        }
+        &-arrow {
+
+        }
+        &-heading {
+            text-align: center;
+            color: #fff;
+        }
+    }
+    &__link {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: #000;
+        background-color: rgb(255, 255, 255);
+        margin: 0 15px;
+    }
+    &__col {
+        display: flex;
+        &:nth-of-type(2) {
+            align-items: center;
+            justify-content: space-evenly;
+            height: 50px;
+
+
+            *  {
+                font-weight: 700;
+                font-size: 1em;
+            }
+
+            h3 {
+               margin-right: 0px; 
+            }
+        }
+        &:nth-of-type(3) {
+                align-items: center;
+                justify-content: flex-end;
+                height: 30px;
+                color: rgba(0, 0, 0, 0.404);
+                
+                * {
+                    display: flex;
+                    align-items: center;
+                    font-size: 0.6em;
+                    margin: 0 10px;
+                    list-style: inside;
+                    font-weight: 400;
+                }
+                *::before {
+                    content: '●';
+                    font-size: 0.4em;
+                    margin-right: 5px;
+                }
+        }
+    }
+    &__heading {
+        
+    }
+}
