@@ -1,0 +1,123 @@
+.random-cars {
+    &__section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+
+        max-width: 1170px;
+        width: 100%;
+    }
+    &__car-image {
+        width: 100%;
+    }
+
+    &__col {
+        display: flex;
+        &:nth-of-type(2) {
+            align-items: center;
+            justify-content: space-evenly;
+            height: 50px;
+
+
+            *  {
+                font-weight: 700;
+                font-size: 1em;
+            }
+
+            h3 {
+               margin-right: 0px; 
+            }
+        }
+        &:nth-of-type(3) {
+                align-items: center;
+                justify-content: flex-end;
+                height: 30px;
+                color: rgba(0, 0, 0, 0.404);
+                
+                * {
+                    display: flex;
+                    align-items: center;
+                    font-size: 0.6em;
+                    margin: 0 10px;
+                    list-style: inside;
+                    font-weight: 400;
+                }
+                *::before {
+                    content: '●';
+                    font-size: 0.4em;
+                    margin-right: 5px;
+                }
+        }
+        
+    }
+    &__link {
+
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: #000;
+        background-color: rgb(255, 255, 255);
+
+        &-highlight {
+            background-color: rgb(223, 54, 54);
+            color: #fff;
+            grid-area: highlight;
+            display: flex;
+
+            > .random-cars__col {
+                &:nth-of-type(1) {
+                    > img {
+                        width: 100%;
+                    }
+                }
+                &:nth-of-type(2) {
+                    height: 150px;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+                    *  {
+                        font-weight: 400;
+                        font-size: 1.5em;
+                    }
+                    h3 {
+                    margin-right: 10em; 
+                    }
+                }
+                &:nth-of-type(3) {
+                        height: 50px;
+                        align-items: center;
+                        justify-content: flex-end;
+                        color: #fff;
+                        
+                        * {
+                            display: flex;
+                            align-items: center;
+                            font-size: 0.8em;
+                            margin: 0 10px;
+                            list-style: inside;
+                            font-weight: 700;
+                        }
+                        *::before {
+                            content: '●';
+                            font-size: 0.8em;
+                            margin-right: 5px;
+                        }
+                }
+            }
+        }
+    }
+
+    @for $i from 2 through 4{
+        &__link:nth-of-type(#{$i}) {
+            grid-area: link + ($i);
+        }
+    }
+        
+    &__car-wrapper {
+        display: grid;
+        grid-template-areas: 'highlight link2 link3'
+                             'highlight link4 link5';
+        grid-gap: 40px;
+    }
+}
