@@ -7,6 +7,11 @@ $text-color--white: #fff;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;  
 }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 body {
     background-color: rgb(233, 233, 233);
 }
