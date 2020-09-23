@@ -1,8 +1,21 @@
 .review-newest-car {
     &__section {
+        padding-top: 4em;
         background-color: #fff;
     }
     &__wrapper {
 
+        &-heading {
+            padding: 2em 0;
+            &__title {
+                font-size: 1.7em;
+                font-weight: 400;
+                text-transform: uppercase;
+                margin-left: 10%;
+                &--orange {
+                    color: #ff6600;
+                }
+            }
+        }
     }
 }
