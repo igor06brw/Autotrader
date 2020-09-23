@@ -2,6 +2,7 @@
     &__section {
         padding-top: 4em;
         background-color: #fff;
+        z-index: -2;
     }
     &__wrapper {
 
@@ -14,6 +15,37 @@
                 margin-left: 10%;
                 &--orange {
                     color: #ff6600;
+                }
+            }
+        }
+        &-car {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            &__content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                position: relative;
+                width: 24%;
+                height: 30em;
+                z-index: 1;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                    opacity: 1;
+
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: cover;
+                    background-attachment: scroll;
+                    background-image: url(../../assets/bmw-seria-5-g30-g31.jpg);
                 }
             }
         }
