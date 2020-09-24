@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-show-colors-of-car',
@@ -7,7 +7,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class ShowColorsOfCarComponent implements OnInit {
 
-  @ViewChild('image') image : HTMLDivElement;
+  @ViewChild('image') image : ElementRef;
 
   constructor() { }
 
@@ -15,8 +15,18 @@ export class ShowColorsOfCarComponent implements OnInit {
   }
 
   callArrow() {
-    
-    console.log(this.image.children);
+    if(this.image.nativeElement.children[0].classList.contains('visible')) {
+      this.image.nativeElement.children[0].classList.remove('visible');
+      this.image.nativeElement.children[0].classList.add('unvisible');
+      this.image.nativeElement.children[1].classList.remove('unvisible');
+      this.image.nativeElement.children[1].classList.add('visible');
+    } else {
+      this.image.nativeElement.children[0].classList.remove('unvisible');
+      this.image.nativeElement.children[0].classList.add('visible');
+      this.image.nativeElement.children[1].classList.remove('visible');
+      this.image.nativeElement.children[1].classList.add('unvisible');
+    }
+    console.log();
   }
 
 }

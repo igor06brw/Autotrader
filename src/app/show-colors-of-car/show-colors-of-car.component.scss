@@ -106,7 +106,8 @@
     }
     &__image {
         &--front {
-            
+        }
+        &--rear {
         }
     }
 }
@@ -155,4 +156,11 @@
             background-color: #090909;
         }
     }
+}
+
+.visible {
+    display: block;
+}
+.unvisible {
+    display: none;
 }
