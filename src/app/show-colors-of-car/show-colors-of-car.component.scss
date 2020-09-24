@@ -112,13 +112,16 @@
 }
 .lacquer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     &__header {
         font-size: 1em;
         font-weight: 400;
         text-align: center;
         padding-bottom: 30px;
+    }
+    &__palette {
+        text-align: center;
     }
     &__color {
         display:inline-block;
@@ -135,7 +138,6 @@
     }
 }
 .buttons {
-    text-align: center;
     &__button {
         &--features {
 
