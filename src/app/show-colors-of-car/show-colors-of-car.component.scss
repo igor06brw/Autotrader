@@ -81,11 +81,12 @@
         bottom: 50%;
         text-decoration: none;
         border: 1px solid none;
-        padding: 5px 12px;
+        padding: 5px 13px;
         background-color: rgb(71, 71, 71);
         font-size: 1.2em;
         border-radius: 50%;
         color: #fff;
+        transition: background-color 0.3s ease-out;
         &--previous {
             left: 0;
             margin-left: 3%;
@@ -95,7 +96,7 @@
             margin-right: 5%;
         }
         &:hover {
-
+            background-color: rgba(71, 71, 71, 0.7); 
         }
     }
     &__content {
