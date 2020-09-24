@@ -15,13 +15,13 @@
         margin-bottom: 10%;
     }
     &__carousel {
-
+        margin-bottom: 5%;
     }
     &__lacquer {
-
+        margin-bottom: 5%;
     }
     &__buttons {
-
+        margin-bottom: 5%;
     }
 }
 
@@ -111,12 +111,26 @@
     }
 }
 .lacquer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    &__header {
+        font-size: 1em;
+        font-weight: 400;
+        text-align: center;
+        padding-bottom: 30px;
+    }
     &__color {
+        display:inline-block;
+        width: 50px;
+        height: 50px;
+        margin: 0 2%;
+        border-radius: 3px;
         &--white {
-
+            border: 1px solid #000;
         }
         &--black {
-
+            background-color: #000;
         }
     }
 }
