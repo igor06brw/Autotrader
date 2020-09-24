@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-show-colors-of-car',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowColorsOfCarComponent implements OnInit {
 
+  @ViewChild('image') image : HTMLDivElement;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  callArrow() {
+    
+    console.log(this.image.children);
   }
 
 }

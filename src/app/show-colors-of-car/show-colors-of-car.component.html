@@ -16,9 +16,9 @@
         </div>
         <div class="wrapper__carousel">
             <div class="carousel">
-                <a href="" class="carousel__arrow carousel__arrow--previous">&#10094;</a>
-                <a href="" class="carousel__arrow carousel__arrow--next">&#10095;</a>
-                <div class="carousel__content">
+                <a (click)="callArrow()" class="carousel__arrow carousel__arrow--previous">&#10094;</a>
+                <a (click)="callArrow()" class="carousel__arrow carousel__arrow--next">&#10095;</a>
+                <div #image class="carousel__content">
                     <img src="../../assets/front.png" alt="" class="carousel__image carousel__image--front">
                     <!-- <img src="../../assets/rear.png" alt="" class="carousel__image carousel__image--rear"> -->
                 </div>
