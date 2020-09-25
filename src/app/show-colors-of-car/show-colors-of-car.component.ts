@@ -7,14 +7,19 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class ShowColorsOfCarComponent implements OnInit {
 
+  typeOfLacquer: string;
+  
   @ViewChild('image') image : ElementRef;
   @ViewChild('lacquerWhite') lacquerWhite : ElementRef;
   @ViewChild('lacquerBlack') lacquerBlack : ElementRef;
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
   callArrow() {
     if(this.image.nativeElement.children[0].classList.contains('visible')) {
@@ -33,10 +38,11 @@ export class ShowColorsOfCarComponent implements OnInit {
 
   callLacquer(value: HTMLElement) {
     if(value.classList.contains('lacquer__color--white')) {
-
+      this.typeOfLacquer = value.dataset.lacquer;
+      console.log(this.typeOfLacquer);
     }
     if(value.classList.contains('lacquer__color--black')) {
-      console.log(this.image.nativeElement.children[0].url);
+      this.typeOfLacquer = value.dataset.lacquer;
     }
   }
 
