@@ -8,6 +8,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class ShowColorsOfCarComponent implements OnInit {
 
   @ViewChild('image') image : ElementRef;
+  @ViewChild('lacquerWhite') lacquerWhite : ElementRef;
+  @ViewChild('lacquerBlack') lacquerBlack : ElementRef;
 
   constructor() { }
 
@@ -27,6 +29,15 @@ export class ShowColorsOfCarComponent implements OnInit {
       this.image.nativeElement.children[1].classList.add('unvisible');
     }
     console.log();
+  }
+
+  callLacquer(value: HTMLElement) {
+    if(value.classList.contains('lacquer__color--white')) {
+
+    }
+    if(value.classList.contains('lacquer__color--black')) {
+      console.log(this.image.nativeElement.children[0].url);
+    }
   }
 
 }
