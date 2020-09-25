@@ -18,6 +18,7 @@ export class ShowColorsOfCarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.image);
   }
 
 
