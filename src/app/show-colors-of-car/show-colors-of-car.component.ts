@@ -11,6 +11,7 @@ export class ShowColorsOfCarComponent implements OnInit {
   
   @ViewChild('image') image : ElementRef;
   @ViewChild('lacquerWhite') lacquerWhite : ElementRef;
+  @ViewChild('lacquerGrey') lacquerGrey : ElementRef;
   @ViewChild('lacquerBlack') lacquerBlack : ElementRef;
 
 
@@ -40,6 +41,9 @@ export class ShowColorsOfCarComponent implements OnInit {
     if(value.classList.contains('lacquer__color--white')) {
       this.typeOfLacquer = value.dataset.lacquer;
       console.log(this.typeOfLacquer);
+    }
+    if(value.classList.contains('lacquer__color--grey')) {
+      this.typeOfLacquer = value.dataset.lacquer;
     }
     if(value.classList.contains('lacquer__color--black')) {
       this.typeOfLacquer = value.dataset.lacquer;
