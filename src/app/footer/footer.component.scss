@@ -12,3 +12,12 @@
 .col {
     margin: 0 3em;
 }
+
+.list {
+    &__element {
+        list-style: none;
+    }   
+    &__link {
+        text-decoration: none;
+    }
+}
