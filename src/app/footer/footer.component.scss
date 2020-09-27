@@ -1,0 +1,14 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8em;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.col {
+    margin: 0 3em;
+}
