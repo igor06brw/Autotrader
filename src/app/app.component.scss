@@ -1,1 +1,14 @@
 @import '../variables.scss';
+
+.app-header {
+    position: relative;
+}
+.app-search-car {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+}
+.app-random-cars {
+    overflow: hidden;
+}
