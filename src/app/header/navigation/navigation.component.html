@@ -19,5 +19,12 @@
             </ul>
             <a href="#" class="nav__button nav__button--red"><span class="nav__button--plus">+</span> Add a new car</a>
         </div>
+        <div class="nav__mobile">
+            <div #hamburger class="nav__hamburger" (click)="toggleHamburger(hamburger)">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </div>
     </div>
 </nav>
