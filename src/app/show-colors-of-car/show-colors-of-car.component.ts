@@ -35,7 +35,6 @@ export class ShowColorsOfCarComponent implements OnInit {
       this.image.nativeElement.children[1].classList.remove('visible');
       this.image.nativeElement.children[1].classList.add('unvisible');
     }
-    console.log();
   }
 
   callLacquer(value: HTMLElement) {
