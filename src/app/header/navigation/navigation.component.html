@@ -1,23 +1,44 @@
-<nav class="navigation">
-    <div class="navigation__wrapper">
-        <div class="navigation__logo-container">
-            <a href="" class="navigation__logo-link">
-                <img src="../../assets/auto-trade-logo-retina.png" width="146" height="41" alt="Autotrader logo" class="navigation__logo-image">
+<nav class="nav">
+    <div class="nav__wrapper">
+        <div class="logo">
+            <a href="" class="logo__link">
+                <img src="../../assets/auto-trade-logo-retina.png" width="146" height="41" alt="Autotrader logo" class="logo__image">
             </a>
         </div>
-        <div class="navigation__buttons-wrapper">
-            <ul class="navigation__list">
-                <li class="navigation__element">
-                    <a href="#" class="navigation__link">Home</a>
+        <div class="nav__menu">
+            <ul class="nav__list">
+                <li class="nav__element">
+                    <a href="#" class="nav__link">Home</a>
                 </li>
-                <li class="navigation__element">
-                    <a href="#" class="navigation__link">My cars</a>
+                <li class="nav__element">
+                    <a href="#" class="nav__link">My cars</a>
                 </li>
-                <li class="navigation__element">
-                    <a href="#" class="navigation__link">Cars</a>
+                <li class="nav__element">
+                    <a href="#" class="nav__link">Cars</a>
                 </li>
             </ul>
-            <a href="#" class="navigation__link navigation__link--red"><span class="navigation__link--plus">+</span> Add a new car</a>
+            <a href="#" class="nav__button nav__button--red"><span class="nav__button--plus">+</span> Add a new car</a>
+        </div>
+        <div class="mobile">
+            <div #hamburger class="mobile__hamburger" (click)="toggleHamburger(hamburger)">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <div class="mobile__menu">
+                <ul class="mobile__list ">
+                    <li class="mobile__element">
+                        <a href="#" class="mobile__link ">Home</a>
+                    </li>
+                    <li class="mobile__element">
+                        <a href="#" class="mobile__link">My cars</a>
+                    </li>
+                    <li class="mobile__element">
+                        <a href="#" class="mobile__link">Cars</a>
+                    </li>
+                </ul>
+                <a href="#" class="mobile__button mobile__button--red"><span class="mobile__button--plus">+</span> Add a new car</a>
+            </div>
         </div>
     </div>
 </nav>
