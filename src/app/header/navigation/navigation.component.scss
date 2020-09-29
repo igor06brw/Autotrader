@@ -117,15 +117,14 @@
     }
 
     &__menu {
-        z-index: 0;
         position: absolute;
         top: 0;
-        right: 50px;
-        bottom: auto;
+        right: 0;
+        bottom: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        text-align: right;
+        text-align: center;
         padding: 15px;
         background: #fff;
         opacity: 0;
@@ -134,16 +133,58 @@
     }
 
     &__list {
-        margin-right: 100px;
+        margin: 18vh auto 0 auto;
         list-style: none;
     }
 
     &__element {
-        margin: 15px 0;
+        margin: 15px auto;
+        width: 150px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #777;
+        
+        &:last-of-type {
+            margin-top: 30px;
+            width: unset;
+            border-bottom: none;
+        }
     }
 
     &__link {
+        padding: 20px 40px;
+        color: #999;
         text-decoration: none;
+    }
+    &__button {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 400;
+        font-size: 0.6em;
+        white-space: nowrap;
+        letter-spacing: 1px;
+        padding: 10px 30px;
+        margin: 0 auto;
+
+        &--red {     
+            background-color: rgb(255, 46, 46);
+            font-weight: 700;
+            transition: background-color .15s ease-out;
+
+
+            &:hover, &:active {
+                background-color: rgb(109, 18, 18);
+            }
+        }
+        &--plus {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
     }
 
 }
