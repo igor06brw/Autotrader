@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -9,6 +9,8 @@ export class NavigationComponent implements OnInit {
 
   // @ViewChild('hamburger') hamburger: ElementRef;
 
+  lol: string;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -18,4 +20,10 @@ export class NavigationComponent implements OnInit {
     value.classList.toggle('is-active');
     value.parentNode.children[1].classList.toggle('is-active');
   }
+
+  @HostListener('window:scroll') onScroll(value: string) {
+    console.log(window.pageYOffset);
+  }
 }
+
+
