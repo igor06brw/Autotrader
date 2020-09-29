@@ -16,7 +16,6 @@ export class NavigationComponent implements OnInit {
 
   toggleHamburger(value: any) {
     value.classList.toggle('is-active');
+    value.parentNode.children[1].classList.toggle('is-active');
   }
-
-
 }

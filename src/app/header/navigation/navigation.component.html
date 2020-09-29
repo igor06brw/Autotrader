@@ -19,11 +19,25 @@
             </ul>
             <a href="#" class="nav__button nav__button--red"><span class="nav__button--plus">+</span> Add a new car</a>
         </div>
-        <div class="nav__mobile">
-            <div #hamburger class="nav__hamburger" (click)="toggleHamburger(hamburger)">
+        <div class="mobile">
+            <div #hamburger class="mobile__hamburger" (click)="toggleHamburger(hamburger)">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
+            </div>
+            <div class="mobile__menu">
+                <ul class="mobile__list ">
+                    <li class="mobile__element">
+                        <a href="#" class="mobile__link ">Home</a>
+                    </li>
+                    <li class="mobile__element">
+                        <a href="#" class="mobile__link">My cars</a>
+                    </li>
+                    <li class="mobile__element">
+                        <a href="#" class="mobile__link">Cars</a>
+                    </li>
+                </ul>
+                <a href="#" class="mobile__button mobile__button--red"><span class="mobile__button--plus">+</span> Add a new car</a>
             </div>
         </div>
     </div>

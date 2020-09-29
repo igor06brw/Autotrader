@@ -28,7 +28,7 @@
         margin-right: 50px;
     }
     &__menu {
-        display: none;
+        display: flex;
         justify-content: flex-end;
     }
 
@@ -80,8 +80,11 @@
             font-weight: 700;
         }
     }
+}
+.mobile {
+    display: none;
     &__hamburger {
-        display: block;
+        display: none;
         float: right;
         cursor: pointer;
         margin-right: 30px;
@@ -106,12 +109,21 @@
       }
 }
 
-@media (min-width: 768px) { 
-    .nav {
+@media (max-width: 768px) { 
+    .mobile {
+        display: block;
         &__menu {
-            display: flex;
+            display: none;
+        }
+        &__menu.is-active {
+            display: block;
         }
         &__hamburger {
+            display: block;
+        }
+    }
+    .nav {
+        &__menu {
             display: none;
         }
     }
