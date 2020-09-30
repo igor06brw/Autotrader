@@ -12,6 +12,7 @@
     &__heading {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         margin-bottom: 2%;
     }
     &__carousel {
@@ -107,10 +108,10 @@
     &__image {
         transition: display 1000ms ease-in-out;
         &--front {
-            width: 1000px;
+            width: 100%;
         }
         &--rear {
-            width: 1000px;
+            width: 100%;
         }
     }
 }
@@ -189,4 +190,14 @@
 }
 .unvisible {
     display: none;
+}
+
+@media (max-width: 768px) { 
+.wrapper {
+    &__heading {
+        & > * {
+            margin: 15px 5px;
+        }
+    }
+}
 }
