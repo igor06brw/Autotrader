@@ -194,10 +194,17 @@
     .mobile {
         &__menu {
             visibility: visible;
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
         }
         &__menu.is-active {
             display: block;
             opacity: 100;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
         &__hamburger {
             display: block;
