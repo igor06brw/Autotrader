@@ -9,25 +9,18 @@
 
 .header {
     background-image: url(../../assets/header-1.jpg);
-    width: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     
     &__wrapper {
+        height: 400px;
         margin: 0 auto;
-        justify-content: center;
-        width: 1170px;
     }
 
-    &__info-car {
+    &__infocar {
         display: flex;
         flex-direction: row;
-    }
-
-    &__text-content {
-        padding: 17rem 0;
-
     }
     &__text {
         color: $text-color--white;

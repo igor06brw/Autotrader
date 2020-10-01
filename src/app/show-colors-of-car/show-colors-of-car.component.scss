@@ -193,11 +193,11 @@
 }
 
 @media (max-width: 768px) { 
-.wrapper {
-    &__heading {
-        & > * {
-            margin: 15px 5px;
+    .wrapper {
+        &__heading {
+            & > * {
+                margin: 15px 5px;
+            }
         }
     }
-}
 }
