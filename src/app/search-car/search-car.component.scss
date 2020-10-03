@@ -127,3 +127,23 @@
         font-size: 0.85em;
     }
 }
+
+
+@media (max-width: 768px) {
+    .search-car {
+        &__form {
+            &-wrapper {
+                &:nth-last-child(n+5) {
+                    min-width: 12em;
+                }
+                &:last-of-type {
+                    width: auto;
+                }
+            }
+        }
+        &__show-result {
+            margin: 0 auto;
+            width: 40vw;
+        }
+    }
+}
