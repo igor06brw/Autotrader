@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchCarComponent implements OnInit {
 
-  manufactures: Array<String> = ['Audi', 'BMW', 'Mercedes Benz']
+  manufactures: Array<String> = ['Audi', 'BMW', 'Jaguar', 'Mercedes Benz', 'Land Rover', 'Lexus', 'Volvo']
 
   constructor() { }
 

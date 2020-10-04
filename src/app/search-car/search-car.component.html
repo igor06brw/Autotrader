@@ -5,7 +5,7 @@
                 <label for="cars" class="search-car__input-label">Make</label>
                 <select name="cars" id="cars" class="search-car__input search-car__make-select">
                     <option value="0">All</option>
-                    <option value={{i}} *ngFor="let manufacture of manufactures, index as i" [attr.data-index]="i">{{manufacture}}</option>
+                    <option value="{{manufacture | lowercase}}" *ngFor="let manufacture of manufactures, index as i" [attr.data-index]="i">{{manufacture}}</option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">
