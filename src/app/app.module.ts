@@ -11,6 +11,7 @@ import { RandomCarTwoComponent } from './random-car-two/random-car-two.component
 import { ReviewNewestCarComponent } from './review-newest-car/review-newest-car.component';
 import { ShowColorsOfCarComponent } from './show-colors-of-car/show-colors-of-car.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './footer/footer.component';
     RandomCarTwoComponent,
     ReviewNewestCarComponent,
     ShowColorsOfCarComponent,
-    FooterComponent
+    FooterComponent,
+    HttpClientModule
   ],
   imports: [
     BrowserModule,
