@@ -5,12 +5,7 @@
                 <label for="cars" class="search-car__input-label">Make</label>
                 <select name="cars" id="cars" class="search-car__input search-car__make-select">
                     <option value="0">All</option>
-                    <option value="audi">Audi</option>
-                    <option value="bmw">BMW</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="lexus">Lexus</option>
-                    <option value="toyota">Toyota</option>
+                    <option value={{i}} *ngFor="let manufacture of manufactures, index as i" [attr.data-index]="i">{{manufacture}}</option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">

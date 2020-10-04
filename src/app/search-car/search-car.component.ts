@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchCarComponent implements OnInit {
 
+  manufactures: Array<String> = ['Audi', 'BMW', 'Mercedes Benz']
+
   constructor() { }
+
+
 
   ngOnInit(): void {
   }
