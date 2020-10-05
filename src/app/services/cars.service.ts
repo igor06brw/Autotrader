@@ -10,7 +10,14 @@ export class CarsService {
   constructor() { 
   }
 
-  choicedManufacture(value: Array<String>) {
-   this.model = value;
+  choicedManufacture(value: String) {
+    switch (value) {
+      case "audi": {
+        break;
+      }
+      case "bmw": {
+        break;
+      }
+    }
   }
 }
