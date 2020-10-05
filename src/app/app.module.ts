@@ -22,7 +22,7 @@ import { FooterComponent } from './footer/footer.component';
     RandomCarTwoComponent,
     ReviewNewestCarComponent,
     ShowColorsOfCarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
