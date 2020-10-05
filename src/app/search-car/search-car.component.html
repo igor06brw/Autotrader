@@ -3,9 +3,14 @@
         <form action="" class="search-car__form">
             <div class="search-car__form-wrapper">
                 <label for="cars" class="search-car__input-label">Make</label>
-                <select name="cars" id="cars" class="search-car__input search-car__make-select">
+                <select name="cars" id="cars" class="search-car__input search-car__make-select" (change)="onManufacture($event.target.value)">
                     <option value="">All</option>
-                    <option value="{{manufacture | lowercase}}" *ngFor="let manufacture of manufactures, index as i" [attr.data-index]="i">{{manufacture}}</option>
+                    <option 
+                        #manufacture
+                        *ngFor="let manufacture of manufactures" 
+                        value="{{manufacture | lowercase}}" >
+                        
+                        {{manufacture}}</option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">
@@ -13,11 +18,7 @@
                 <select name="model" id="model" class="search-car__input search-car__model-select">
                     <option value="0">All</option>
                     <option value="a3">A3</option>
-                    <option value="a4">A4</option>
-                    <option value="a5">A5</option>
-                    <option value="a6">A6</option>
-                    <option value="a7">A7</option>
-                    <option value="a8">A8</option>
+                    <!-- <option value="{{model | lowercase}}" *ngFor="let model of models, index as i" [attr.data-index]="i">{{model}}</option> -->
                 </select>
             </div>
             <div class="search-car__form-wrapper">
