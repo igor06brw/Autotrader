@@ -8,17 +8,21 @@
                     <option 
                         #manufacture
                         *ngFor="let manufacture of manufactures" 
-                        value="{{manufacture | lowercase}}" >
+                        value="{{manufacture | lowercase}}">
                         
                         {{manufacture}}</option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">
                 <label for="model" class="search-car__input-label">Model</label>
-                <select name="model" id="model" class="search-car__input search-car__model-select" >
+                <select name="model" id="model" class="search-car__input search-car__model-select">
                     <option value="0">All</option>
-                    <option value="a3">A3</option>
-                    <!-- <option value="{{model | lowercase}}" *ngFor="let model of models, index as i" [attr.data-index]="i">{{model}}</option> -->
+                    <option 
+                        #make
+                        *ngFor="let model of models"
+                        value="{{model | lowercase}}">
+                    
+                        {{model}}</option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">

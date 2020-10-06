@@ -7,7 +7,6 @@ import { allModelsOfCars } from '../base/models';
 export class CarsService {
 
   model: any = allModelsOfCars;
-  modelOfCar: any = allModelsOfCars;
 
   constructor() { 
   }
@@ -17,13 +16,11 @@ export class CarsService {
   choicedManufacture(value: String) {
     switch (value) {
       case "audi": {
-        this.model[0];
-        console.log(this.model[0]);
+        return this.model[0];
         break;
       }
       case "bmw": {
-        this.model[1];
-        console.log(this.model[1]);
+        return this.model[1];
         break;
       }
     }

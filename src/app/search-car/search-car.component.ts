@@ -9,10 +9,11 @@ import { CarsService } from '../services/cars.service';
 export class SearchCarComponent implements OnInit {
 
   manufactures: Array<String> = ['Audi', 'BMW', 'Jaguar', 'Mercedes Benz', 'Land Rover', 'Lexus', 'Volvo'];
-  models: any;
+  models: any = [];
 
 
   @ViewChild('manufacture') manufacture: ElementRef;
+
 
 
   constructor(private carsService: CarsService) {
@@ -24,8 +25,7 @@ export class SearchCarComponent implements OnInit {
   }
 
   onManufacture(value: any) {
-    this.models = this.carsService.choicedManufacture(value)
-    
+    return this.models = this.carsService.choicedManufacture(value);
   }
 }
 
