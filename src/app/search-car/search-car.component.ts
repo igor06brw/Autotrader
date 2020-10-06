@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CarsService } from '../services/cars.service';
+import { Manufactures } from '../base/manufactures';
 
 @Component({
   selector: 'app-search-car',
@@ -8,13 +9,12 @@ import { CarsService } from '../services/cars.service';
 })
 export class SearchCarComponent implements OnInit {
 
-  manufactures: Array<String> = ['Audi', 'BMW', 'Jaguar', 'Mercedes', 'Landrover', 'Lexus', 'Volvo'];
+  manufactures: Array<Object> = Manufactures; 
   models: any = [];
   search: Array<String> = [];
 
 
   @ViewChild('manufacture') manufacture: ElementRef;
-
 
 
   constructor(private carsService: CarsService) {
@@ -23,6 +23,7 @@ export class SearchCarComponent implements OnInit {
 
 
   ngOnInit(): void {
+    console.log(this.manufactures);
   }
 
   onManufacture(value: any) {
