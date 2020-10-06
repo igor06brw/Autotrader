@@ -10,6 +10,7 @@ export class SearchCarComponent implements OnInit {
 
   manufactures: Array<String> = ['Audi', 'BMW', 'Jaguar', 'Mercedes Benz', 'Land Rover', 'Lexus', 'Volvo'];
   models: any = [];
+  search: Array<String> = [];
 
 
   @ViewChild('manufacture') manufacture: ElementRef;
@@ -25,7 +26,13 @@ export class SearchCarComponent implements OnInit {
   }
 
   onManufacture(value: any) {
-    return this.models = this.carsService.choicedManufacture(value);
+    this.search.push(value);
+    console.log(value);
+    this.models = this.carsService.choicedManufacture(value);
+  }
+  onModel(value: string) {
+    this.search.push(value);
+    console.log(this.search);
   }
 }
 
