@@ -8,7 +8,7 @@ import { CarsService } from '../services/cars.service';
 })
 export class SearchCarComponent implements OnInit {
 
-  manufactures: Array<String> = ['Audi', 'BMW', 'Jaguar', 'Mercedes Benz', 'Land Rover', 'Lexus', 'Volvo'];
+  manufactures: Array<String> = ['Audi', 'BMW', 'Jaguar', 'Mercedes', 'Landrover', 'Lexus', 'Volvo'];
   models: any = [];
   search: Array<String> = [];
 
@@ -26,6 +26,7 @@ export class SearchCarComponent implements OnInit {
   }
 
   onManufacture(value: any) {
+    
     this.search.push(value);
     console.log(value);
     this.models = this.carsService.choicedManufacture(value);

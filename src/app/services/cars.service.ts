@@ -23,6 +23,26 @@ export class CarsService {
         return this.model[1];
         break;
       }
+      case "jaguar": {
+        return this.model[2];
+        break;
+      }
+      case "mercedes": {
+        return this.model[3];
+        break;
+      }
+      case "volvo": {
+        return this.model[4];
+        break;
+      }
+      case "lexus": {
+        return this.model[5];
+        break;
+      }
+      case "landrover": {
+        return this.model[6];
+        break;
+      }
     }
   }
 }
