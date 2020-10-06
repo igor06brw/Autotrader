@@ -8,9 +8,9 @@
                     <option 
                         #manufacture
                         *ngFor="let manufacture of manufactures" 
-                        value="{{manufacture | lowercase}}">
+                        value="{{manufacture.name}}">
                         
-                        {{manufacture}}</option>
+                        {{manufacture.title}}</option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">
