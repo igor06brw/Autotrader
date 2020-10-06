@@ -1,12 +1,28 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { allModelsOfCars } from '../base/models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarsService {
 
-  constructor(private http: HttpClient) { 
+  model: any = allModelsOfCars;
 
+  constructor() { 
+  }
+
+
+
+  choicedManufacture(value: String) {
+    switch (value) {
+      case "audi": {
+        return this.model[0];
+        break;
+      }
+      case "bmw": {
+        return this.model[1];
+        break;
+      }
+    }
   }
 }
