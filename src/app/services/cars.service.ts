@@ -27,7 +27,7 @@ export class CarsService {
         return this.model[2];
         break;
       }
-      case "mercedes": {
+      case "mercedesBenz": {
         return this.model[3];
         break;
       }
@@ -39,7 +39,7 @@ export class CarsService {
         return this.model[5];
         break;
       }
-      case "landrover": {
+      case "landRover": {
         return this.model[6];
         break;
       }
