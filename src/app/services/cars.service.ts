@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Model } from '../base/models';
+import { allModelsOfCars } from '../base/models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarsService {
 
-  model: any = [];
+  model: any = allModelsOfCars;
+  modelOfCar: any = allModelsOfCars;
 
-  constructor(private modelOfCar: Model) { 
-    this.model = modelOfCar;
+  constructor() { 
   }
 
 

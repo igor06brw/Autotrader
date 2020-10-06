@@ -8,17 +8,14 @@ import { CarsService } from '../services/cars.service';
 })
 export class SearchCarComponent implements OnInit {
 
-  manufactures: Array<String> = ['Audi', 'BMW', 'Jaguar', 'Mercedes Benz', 'Land Rover', 'Lexus', 'Volvo']
-  audi: Array<String> = ['A1', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8'];
-  bmw: Array<String> = ['Series 1', 'Series 2','Series 3' ,'Series 4' ,'Series 5' ,'Series 6' ,'Series 7'];
-  model: Array<String>
+  manufactures: Array<String> = ['Audi', 'BMW', 'Jaguar', 'Mercedes Benz', 'Land Rover', 'Lexus', 'Volvo'];
+  models: any;
 
 
   @ViewChild('manufacture') manufacture: ElementRef;
 
 
-  constructor(carsService: CarsService) {
-    
+  constructor(private carsService: CarsService) {
   }
 
 
@@ -27,7 +24,8 @@ export class SearchCarComponent implements OnInit {
   }
 
   onManufacture(value: any) {
+    this.models = this.carsService.choicedManufacture(value)
     
   }
-
 }
+
