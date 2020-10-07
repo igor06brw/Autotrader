@@ -11,7 +11,7 @@ export class Car implements CarInterface {
     imageFront?: String;
     imageBack?: String; 
 
-    constructor(manufacture?: String, model?: String, description?: String, price?: Number, year?: Number, mileage?: Number, imageMain?: String;) {
+    constructor(manufacture?: String, model?: String, description?: String, price?: Number, year?: Number, mileage?: Number, imageMain?: String) {
         this.manufacture = manufacture;
         this.model = model;
         this.description = description;

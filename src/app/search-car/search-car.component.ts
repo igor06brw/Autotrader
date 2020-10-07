@@ -74,11 +74,11 @@ export class SearchCarComponent implements OnInit {
   }
   checkMileage(value: String) {
     let convert = Number(value);
-    if(this.searchCar.year == 0) {
-      this.searchCar.year = convert;
+    if(this.searchCar.mileage == 0) {
+      this.searchCar.mileage = convert;
     }
-    if(this.searchCar.year != convert) {
-      this.searchCar.year = convert;
+    if(this.searchCar.mileage != convert) {
+      this.searchCar.mileage = convert;
       console.log(this.searchCar);
     }
   }

@@ -1,9 +1,13 @@
 <section class="search-car__section">
     <div class="search-car__wrapper">
-        <form action="" class="search-car__form">
+        <form #searchCar="ngForm" ngSubmit="onSubmit(searchCar)" class="search-car__form">
             <div class="search-car__form-wrapper">
                 <label for="cars" class="search-car__input-label">Make</label>
-                <select name="cars" id="cars" class="search-car__input search-car__make-select" (change)="onManufacture($event.target.value)">
+                <select name="cars" 
+                        id="cars" 
+                        class="search-car__input search-car__make-select" 
+                        (change)="onManufacture($event.target.value)" 
+                        ngModel>
                     <option value="">All</option>
                     <option 
                         #manufacture
@@ -27,7 +31,11 @@
             </div>
             <div class="search-car__form-wrapper">
                 <label for="max-price" class="search-car__input-label">Max Price</label>
-                <select name="max-price" id="max-price" class="search-car__input search-car__max-price-select" (change)="onPrice($event.target.value)">
+                <select name="max-price" 
+                        id="max-price" 
+                        class="search-car__input search-car__max-price-select" 
+                        (change)="onPrice($event.target.value)" 
+                        ngModel>
                     <option  value="0">All</option>
                     <option *ngFor="let price of prices"
                             value="{{price}}">
@@ -63,102 +71,7 @@
     </div>
     <div class="search-car__wrapper">
         <div class="search-car__display-results">
-            <div class="search-car__car-wrapper">
-                <a href="" class="search-car__car-link">
-                    <div class="search-car__col">
-                        <img src="../../assets/bmw-5-thumbnail.jpg" width="100" height="100" alt="" class="search-car__car-thumbnail">
-                    </div>
-                    <div class="search-car__col">
-                        <h3 class="search-car__car-heading">BMW 5 F10 550i</h3>
-                        <p class="search-car__car-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="search-car__col">
-                        <p class="search-car__car-price">$30000</p>
-                        <p class="search-car__car-miles">50,000 miles</p>
-                        <p class="search-car__car-production">10-2015</p>
-                    </div>
-                </a>
-            </div>
-            <div class="search-car__car-wrapper">
-                <a href="" class="search-car__car-link">
-                    <div class="search-car__col">
-                        <img src="../../assets/bmw-5-thumbnail.jpg" width="100" height="100" alt="" class="search-car__car-thumbnail">
-                    </div>
-                    <div class="search-car__col">
-                        <h3 class="search-car__car-heading">BMW 5 F10 550i</h3>
-                        <p class="search-car__car-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="search-car__col">
-                        <p class="search-car__car-price">$30000</p>
-                        <p class="search-car__car-miles">50,000 miles</p>
-                        <p class="search-car__car-production">10-2015</p>
-                    </div>
-                </a>
-            </div>
-            <div class="search-car__car-wrapper">
-                <a href="" class="search-car__car-link">
-                    <div class="search-car__col">
-                        <img src="../../assets/bmw-5-thumbnail.jpg" width="100" height="100" alt="" class="search-car__car-thumbnail">
-                    </div>
-                    <div class="search-car__col">
-                        <h3 class="search-car__car-heading">BMW 5 F10 550i</h3>
-                        <p class="search-car__car-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="search-car__col">
-                        <p class="search-car__car-price">$30000</p>
-                        <p class="search-car__car-miles">50,000 miles</p>
-                        <p class="search-car__car-production">10-2015</p>
-                    </div>
-                </a>
-            </div>
-            <div class="search-car__car-wrapper">
-                <a href="" class="search-car__car-link">
-                    <div class="search-car__col">
-                        <img src="../../assets/bmw-5-thumbnail.jpg" width="100" height="100" alt="" class="search-car__car-thumbnail">
-                    </div>
-                    <div class="search-car__col">
-                        <h3 class="search-car__car-heading">BMW 5 F10 550i</h3>
-                        <p class="search-car__car-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="search-car__col">
-                        <p class="search-car__car-price">$30000</p>
-                        <p class="search-car__car-miles">50,000 miles</p>
-                        <p class="search-car__car-production">10-2015</p>
-                    </div>
-                </a>
-            </div>
-            <div class="search-car__car-wrapper">
-                <a href="" class="search-car__car-link">
-                    <div class="search-car__col">
-                        <img src="../../assets/bmw-5-thumbnail.jpg" width="100" height="100" alt="" class="search-car__car-thumbnail">
-                    </div>
-                    <div class="search-car__col">
-                        <h3 class="search-car__car-heading">BMW 5 F10 550i</h3>
-                        <p class="search-car__car-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="search-car__col">
-                        <p class="search-car__car-price">$30000</p>
-                        <p class="search-car__car-miles">50,000 miles</p>
-                        <p class="search-car__car-production">10-2015</p>
-                    </div>
-                </a>
-            </div>
-            <div class="search-car__car-wrapper">
-                <a href="" class="search-car__car-link">
-                    <div class="search-car__col">
-                        <img src="../../assets/bmw-5-thumbnail.jpg" width="100" height="100" alt="" class="search-car__car-thumbnail">
-                    </div>
-                    <div class="search-car__col">
-                        <h3 class="search-car__car-heading">BMW 5 F10 550i</h3>
-                        <p class="search-car__car-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div class="search-car__col">
-                        <p class="search-car__car-price">$30000</p>
-                        <p class="search-car__car-miles">50,000 miles</p>
-                        <p class="search-car__car-production">10-2015</p>
-                    </div>
-                </a>
-            </div>
+            <app-car></app-car>
         </div>
     </div>
 </section>
