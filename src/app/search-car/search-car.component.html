@@ -28,8 +28,10 @@
             <div class="search-car__form-wrapper">
                 <label for="max-price" class="search-car__input-label">Max Price</label>
                 <select #price name="max-price" id="max-price" class="search-car__input search-car__max-price-select" (change)="onPrice($event.target.value)">
-                    <option value="0">All</option>
-                    <option value="100">$100</option>
+                    <option  value="0">All</option>
+                    <option #make
+                    *ngFor="let price of prices"
+                    value="{{price}}">${{price}}</option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">
