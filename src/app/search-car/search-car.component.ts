@@ -11,6 +11,7 @@ export class SearchCarComponent implements OnInit {
 
   manufactures: Array<Object> = Manufactures; 
   prices: Array<String> = ['40000', '30000', '15000', '10000', '7500']
+  years: Array<String> = ['2020', '2019', '2018', '2017', '2016', '2015']
   models: any = [];
   search: Array<String> = [];
   resultsArr: any = [];
@@ -30,7 +31,7 @@ export class SearchCarComponent implements OnInit {
   checkManufacture(value: String) {
     this.resultsArr.forEach((e) => {
       console.log(this.search);
-      if(this.search = []) {
+      if(this.search >= []) {
         return this.search[0] = value, this.search[1] = 'all';
       }
       if(this.search[0] == e) {
@@ -45,13 +46,26 @@ export class SearchCarComponent implements OnInit {
     }
   }
   checkPrice(value: String) {
-    if(this.search == []) {
+    if(this.search.length == 0) {
       this.search[0] = 'all';
       this.search[1] = 'all';
       this.search[2] = value;
     }
     if(this.search[2] != value) {
       this.search[2] = value;
+      console.log(this.search);
+    }
+  }
+
+  checkYear(value: String) {
+    if(this.search.length == 0) {
+      this.search[0] = 'all';
+      this.search[1] = 'all';
+      this.search[2] = 'all';
+      this.search[3] = value;
+    }
+    if(this.search[3] != value) {
+      this.search[3] = value;
       console.log(this.search);
     }
   }
@@ -64,7 +78,10 @@ export class SearchCarComponent implements OnInit {
     this.checkModel(value);
   }
   onPrice(value: String) {
-    this.checkPrice(value)
+    this.checkPrice(value);
+  }
+  onYear(value: String) {
+    this.checkYear(value);
   }
 }
 
