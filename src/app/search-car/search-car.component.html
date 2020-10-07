@@ -51,8 +51,8 @@
                 <select name="max-mileage" id="max-mileage" class="search-car__input search-car__max-mileage-select" (change)="onMileage($event.target.value)">
                     <option value="0">All</option>
                     <option *ngFor="let mileage of mileages"
-                            value="{{mileage}}"
-                            >{{mileage}}
+                            value="{{mileage}}">
+                            {{mileage}}
                     </option>
                 </select>
             </div>

@@ -42,7 +42,7 @@ export class SearchCarComponent implements OnInit {
         return this.searchCar.manufacture = value, this.searchCar.model = undefined;
       }
       if(this.searchCar.manufacture != e) {
-        return this.searchCar.manufacture = value, this.searchCar.model = undefined;;
+        return this.searchCar.manufacture = value, this.searchCar.model = undefined;
       }
     });
   }
@@ -53,39 +53,33 @@ export class SearchCarComponent implements OnInit {
     }
   }
   checkPrice(value: String) {
-    if(this.search.length == 0) {
-      this.search[0] = 'all';
-      this.search[1] = 'all';
-      this.search[2] = value;
+    let convert = Number(value);
+    if(this.searchCar.price == 0) {
+      this.searchCar.price = convert;
     }
-    if(this.search[2] != value) {
-      this.search[2] = value;
-      console.log(this.search);
+    if(this.searchCar.price != convert) {
+      this.searchCar.price = convert;
+      console.log(this.searchCar);
     }
   }
   checkYear(value: String) {
-    if(this.search.length == 0) {
-      this.search[0] = 'all';
-      this.search[1] = 'all';
-      this.search[2] = 'all';
-      this.search[3] = value;
+    let convert = Number(value);
+    if(this.searchCar.year == 0) {
+      this.searchCar.year = convert;
     }
-    if(this.search[3] != value) {
-      this.search[3] = value;
-      console.log(this.search);
+    if(this.searchCar.year != convert) {
+      this.searchCar.year = convert;
+      console.log(this.searchCar);
     }
   }
   checkMileage(value: String) {
-    if(this.search.length == 0) {
-      this.search[0] = 'all';
-      this.search[1] = 'all';
-      this.search[2] = 'all';
-      this.search[3] = 'all';
-      this.search[4] = value;
+    let convert = Number(value);
+    if(this.searchCar.year == 0) {
+      this.searchCar.year = convert;
     }
-    if(this.search[4] != value) {
-      this.search[4] = value;
-      console.log(this.search);
+    if(this.searchCar.year != convert) {
+      this.searchCar.year = convert;
+      console.log(this.searchCar);
     }
   }
 

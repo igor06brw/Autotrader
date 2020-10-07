@@ -11,6 +11,8 @@ import { RandomCarTwoComponent } from './random-car-two/random-car-two.component
 import { ReviewNewestCarComponent } from './review-newest-car/review-newest-car.component';
 import { ShowColorsOfCarComponent } from './show-colors-of-car/show-colors-of-car.component';
 import { FooterComponent } from './footer/footer.component';
+import { CommonComponent } from './car/common/common.component';
+import { CarComponent } from './car/common/car/car.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { FooterComponent } from './footer/footer.component';
     ReviewNewestCarComponent,
     ShowColorsOfCarComponent,
     FooterComponent,
+    CommonComponent,
+    CarComponent,
   ],
   imports: [
     BrowserModule,
