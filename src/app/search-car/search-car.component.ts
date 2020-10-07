@@ -10,8 +10,9 @@ import { Manufactures } from '../base/manufactures';
 export class SearchCarComponent implements OnInit {
 
   manufactures: Array<Object> = Manufactures; 
-  prices: Array<String> = ['40000', '30000', '15000', '10000', '7500']
-  years: Array<String> = ['2020', '2019', '2018', '2017', '2016', '2015']
+  prices: Array<String> = ['40000', '30000', '15000', '10000', '7500'];
+  years: Array<String> = ['2020', '2019', '2018', '2017', '2016', '2015'];
+  mileages: Array<String> = ['2500', '3000', '4000', '5000', '7000'];
   models: any = [];
   search: Array<String> = [];
   resultsArr: any = [];
@@ -70,6 +71,20 @@ export class SearchCarComponent implements OnInit {
     }
   }
 
+  checkMileage(value: String) {
+    if(this.search.length == 0) {
+      this.search[0] = 'all';
+      this.search[1] = 'all';
+      this.search[2] = 'all';
+      this.search[3] = 'all';
+      this.search[4] = value;
+    }
+    if(this.search[4] != value) {
+      this.search[4] = value;
+      console.log(this.search);
+    }
+  }
+
   onManufacture(value: String) {
     this.checkManufacture(value);
     this.models = this.carsService.choicedManufacture(value);
@@ -82,6 +97,9 @@ export class SearchCarComponent implements OnInit {
   }
   onYear(value: String) {
     this.checkYear(value);
+  }
+  onMileage(value: String) {
+    this.checkMileage(value);
   }
 }
 
