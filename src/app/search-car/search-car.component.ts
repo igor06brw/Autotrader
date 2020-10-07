@@ -27,41 +27,44 @@ export class SearchCarComponent implements OnInit {
     this.manufactures.forEach(e => this.resultsArr.push(e.name));
   }
 
-  checkArrays(value: String) {
+  checkManufacture(value: String) {
     this.resultsArr.forEach((e) => {
+      console.log(this.search);
       if(this.search = []) {
-        this.search.push(value);
+        return this.search[0] = value, this.search[1] = 'all';
       }
       if(this.search[0] == e) {
-        console.log(this.search[0], value);
-        this.search[0] = value;
-        this.search.splice(0, 1);
+        return this.search[0] = value, this.search[1] = 'all';
       }
     });
   }
-
+  checkModel(value: String) {
+    if(this.search[1] != value) {
+      this.search[1] = value;
+      console.log(this.search);
+    }
+  }
   checkPrice(value: String) {
     if(this.search == []) {
       this.search[0] = 'all';
       this.search[1] = 'all';
-      this.search[2] = 'value';
+      this.search[2] = value;
     }
     if(this.search[2] != value) {
       this.search[2] = value;
+      console.log(this.search);
     }
   }
 
   onManufacture(value: String) {
-    this.checkArrays(value);
+    this.checkManufacture(value);
     this.models = this.carsService.choicedManufacture(value);
   }
   onModel(value: String) {
-    this.search.push(value);
-    console.log(this.search);
+    this.checkModel(value);
   }
   onPrice(value: String) {
     this.checkPrice(value)
-    console.log(this.search);
   }
 }
 
