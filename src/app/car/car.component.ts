@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../models/car';
 import { CarInterface } from '../models/car.model';
+import { carCollection } from '../models/cars.collection';
 
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
   styleUrls: ['./car.component.scss']
 })
+
 export class CarComponent implements OnInit, CarInterface {
   manufacture?: String;
   model?: String;
