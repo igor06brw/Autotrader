@@ -1,76 +1,62 @@
 <section class="search-car__section">
     <div class="search-car__wrapper">
-        <form class="search-car__form">
+        <form [formGroup]="searchCarsForm" (ngSubmit)="onSubmit()" class="search-car__form">
             <div class="search-car__form-wrapper">
-                <label for="cars" class="search-car__input-label">Make</label>
-                <select name="cars" 
-                        id="cars" 
+                <label for="manufacture" class="search-car__input-label">Manufacture</label>
+                <select name="manufacture"
                         class="search-car__input search-car__make-select" 
-                        (change)="onManufacture($event.target.id)" 
-                        ngModel>
-                    <option value="">All</option>
+                        formControlName="manufacture"
+                        (change)="onManufacture($event.target.value)">
+                    <option value="all" selected>All</option>
                     <option 
-
                         *ngFor="let manufacture of manufactures" 
                         value="{{manufacture.name}}">
-                        
-                        {{manufacture.title}}</option>
+                        {{manufacture.title}}
+                    </option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">
                 <label for="model" class="search-car__input-label">Model</label>
-                <select name="model" id="model" class="search-car__input search-car__model-select">
-                    <option value="0">All</option>
+                <select 
+                    name="model" 
+                    class="search-car__input search-car__model-select" 
+                    formControlName="model">
+
+                    <option value="all" selected>All</option>
                     <option 
-                        #make
-                        *ngFor="let model of models"
-                        value="{{model | lowercase}}">
-                    
-                        {{model}}</option>
+                        *ngFor="let model of handleModels | keyvalue" 
+                        value="{{model.key}}">
+                        {{model.value}}
+                    </option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">
                 <label for="max-price" class="search-car__input-label">Max Price</label>
                 <select name="max-price" 
                         id="max-price" 
-                        class="search-car__input search-car__max-price-select" 
-                        ngModel>
-                    <option  value="0">All</option>
-                    <option *ngFor="let price of prices"
-                            value="{{price}}">
-                            ${{price}}
-                    </option>
+                        class="search-car__input search-car__max-price-select" >
+                    <option  value="0" selected>All</option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">
                 <label for="min-year" class="search-car__input-label">Min year</label>
                 <select name="min-year" id="min-year" class="search-car__input search-car__min-year-select">
                     <option value="0">All</option>
-                    <option #year
-                            *ngFor="let year of years"
-                            value="{{year}}">
-                            {{year}}
-                    </option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">
                 <label for="max-mileage" class="search-car__input-label">Max Mileage</label>
                 <select name="max-mileage" id="max-mileage" class="search-car__input search-car__max-mileage-select">
                     <option value="0">All</option>
-                    <option *ngFor="let mileage of mileages"
-                            value="{{mileage}}">
-                            {{mileage}}
-                    </option>
                 </select>
             </div>
             <div class="search-car__form-wrapper">
-                <input type="submit" value="Show Result" class="search-car__show-result">
+                <button type="submit" class="search-car__show-result">Show Result</button>
             </div>
         </form>
     </div>
     <div class="search-car__wrapper">
         <div class="search-car__display-results">
-            <app-car></app-car>
         </div>
     </div>
 </section>
