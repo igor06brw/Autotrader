@@ -1,46 +1,46 @@
 import { Injectable } from '@angular/core';
-import { allModelsOfCars } from '../base/models';
+import { MODELS } from '../base/models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarsService {
 
-  model: any = allModelsOfCars;
+  models: any = MODELS;
 
   constructor() { 
   }
 
 
 
-  choicedManufacture(value: String) {
+  choicedManufacture(value: Number) {
     switch (value) {
-      case "audi": {
-        return this.model[0];
+      case 0: {
+        return this.models[0].model;
         break;
       }
-      case "bmw": {
-        return this.model[1];
+      case 1: {
+        return this.models[1].model;
         break;
       }
-      case "jaguar": {
-        return this.model[2];
+      case 2: {
+        return this.models[2].model;
         break;
       }
-      case "mercedesBenz": {
-        return this.model[3];
+      case 3: {
+        return this.models[3].model;
         break;
       }
-      case "volvo": {
-        return this.model[4];
+      case 4: {
+        return this.models[4].model;
         break;
       }
-      case "lexus": {
-        return this.model[5];
+      case 5: {
+        return this.models[5].model;
         break;
       }
-      case "landRover": {
-        return this.model[6];
+      case 6: {
+        return this.models[6].model;
         break;
       }
     }

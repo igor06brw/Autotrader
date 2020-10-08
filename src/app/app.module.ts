@@ -12,6 +12,7 @@ import { ReviewNewestCarComponent } from './review-newest-car/review-newest-car.
 import { ShowColorsOfCarComponent } from './show-colors-of-car/show-colors-of-car.component';
 import { FooterComponent } from './footer/footer.component';
 import { CarComponent } from './car/car.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CarComponent } from './car/car.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

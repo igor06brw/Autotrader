@@ -1,4 +1,4 @@
-export const Manufactures: Array<Object> = [
+export const MANUFACTURES: Array<Object> = [
     { id: 0, name: 'audi', title: 'Audi' },
     { id: 1, name: 'bmw', title: 'BMW' },
     { id: 2, name: 'jaguar', title: 'Jaguar' },
