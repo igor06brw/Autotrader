@@ -6,6 +6,9 @@ import { ModelsService } from '../services/models.service';
 import { MANUFACTURES } from '../base/manufactures';
 import { MODELS } from '../base/models';
 
+import { CAR_COLLECTION } from '../models/cars.collection'
+
+
 @Component({
   selector: 'app-search-car',
   templateUrl: './search-car.component.html',
@@ -14,11 +17,13 @@ import { MODELS } from '../base/models';
 export class SearchCarComponent implements OnInit {
 
   manufactures: Array<object> = MANUFACTURES; 
-  // prices: Array<String> = ['40000', '30000', '15000', '10000', '7500'];
-  // years: Array<String> = ['2020', '2019', '2018', '2017', '2016', '2015'];
-  // mileages: Array<String> = ['2500', '3000', '4000', '5000', '7000'];
+  prices: Array<String> = ['40000', '30000', '15000', '10000', '7500'];
+  years: Array<String> = ['2020', '2019', '2018', '2017', '2016', '2015'];
+  mileages: Array<String> = ['2500', '3000', '4000', '5000', '7000'];
   models = MODELS;
   handleModels: Array<String> = [];
+  
+  cars = CAR_COLLECTION;
 
 
 
@@ -30,11 +35,10 @@ export class SearchCarComponent implements OnInit {
   constructor(private fb: FormBuilder, private modelsService: ModelsService) {}
 
   ngOnInit(): void {
-    console.log(this.models);
   }
 
   onSubmit() {
-    console.log(this.searchCarsForm);
+    console.log(this.searchCarsForm.value);
   }
   onManufacture(value: string) {
     this.modelsService.choicedManufacture(value);

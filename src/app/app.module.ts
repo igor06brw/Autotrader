@@ -12,6 +12,7 @@ import { ReviewNewestCarComponent } from './review-newest-car/review-newest-car.
 import { ShowColorsOfCarComponent } from './show-colors-of-car/show-colors-of-car.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CarComponent } from './car/car.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReviewNewestCarComponent,
     ShowColorsOfCarComponent,
     FooterComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,

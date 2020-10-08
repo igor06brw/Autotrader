@@ -57,6 +57,7 @@
     </div>
     <div class="search-car__wrapper">
         <div class="search-car__display-results">
+            <car-card [car]="i" *ngFor="let car of cars ; let i index"></car-card>
         </div>
     </div>
 </section>
