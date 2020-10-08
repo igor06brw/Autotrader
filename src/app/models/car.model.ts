@@ -4,4 +4,9 @@ export interface CarInterface {
     price?: Number;
     year?: Number;
     mileage?: Number;
+    description?: String;
+    imageMain?: String;
+    imageFront?: String;
+    imageBack?: String; 
+    imageThumbnail?: String;
 }
