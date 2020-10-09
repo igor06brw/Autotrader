@@ -11,6 +11,8 @@ import { RandomCarTwoComponent } from './random-car-two/random-car-two.component
 import { ReviewNewestCarComponent } from './review-newest-car/review-newest-car.component';
 import { ShowColorsOfCarComponent } from './show-colors-of-car/show-colors-of-car.component';
 import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CarComponent } from './car/car.component'
 
 @NgModule({
   declarations: [
@@ -23,9 +25,11 @@ import { FooterComponent } from './footer/footer.component';
     ReviewNewestCarComponent,
     ShowColorsOfCarComponent,
     FooterComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
