@@ -33,19 +33,15 @@ export class SearchCarComponent implements OnInit {
   searchCarsForm = this.fb.group({
     manufacture: [''],
     model: [''],
-    price: ['']
+    price: [''],
+    year: [''],
+    mileage: ['']
   });
 
   constructor(private fb: FormBuilder, private modelsService: ModelsService) {}
-
+  
   ngOnInit(): void {
-    console.log(this.handleModels, this.prices)
   }
-
-  example() {
-    console.log(this.handleModels, this.prices)
-  }
-
   onSubmit() {
     console.log(this.searchCarsForm.value);
   }
