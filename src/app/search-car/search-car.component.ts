@@ -18,13 +18,13 @@ import { CAR_COLLECTION } from '../models/cars.collection'
   styleUrls: ['./search-car.component.scss']
 })
 export class SearchCarComponent implements OnInit {
-
   manufactures: Array<Object> = MANUFACTURES; 
-  prices: Array<Object> = PRICES;
-  years: Array<Object> = YEARS;
-  mileages: Array<Object> =  MILEAGES;
+  prices: Object = PRICES;
+  years: Object = YEARS;
+  mileages: Object =  MILEAGES;
   models: Array<Object> = MODELS;
   handleModels: Array<String> = [];
+  
   
   cars = CAR_COLLECTION;
 
@@ -32,12 +32,18 @@ export class SearchCarComponent implements OnInit {
 
   searchCarsForm = this.fb.group({
     manufacture: [''],
-    model: ['']
+    model: [''],
+    price: ['']
   });
 
   constructor(private fb: FormBuilder, private modelsService: ModelsService) {}
 
   ngOnInit(): void {
+    console.log(this.handleModels, this.prices)
+  }
+
+  example() {
+    console.log(this.handleModels, this.prices)
   }
 
   onSubmit() {

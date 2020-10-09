@@ -1,1 +1,1 @@
-export const MILEAGES: Array<Object> = [ {2500: 2500, 3000: 3000, 4000: 4000, 5000: 5000, 7000: 7000} ];
+export const MILEAGES: Object = {2500: 2500, 3000: 3000, 4000: 4000, 5000: 5000, 7000: 7000};
