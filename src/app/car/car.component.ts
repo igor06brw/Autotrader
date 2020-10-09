@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MODELS } from '../base/models';
+import { MANUFACTURES } from '../base/manufactures';
 
 
 @Component({
@@ -12,10 +13,22 @@ export class CarComponent implements OnInit {
   @Input() car;
 
   models: Array<Object> = MODELS;
+  manufactures: Array<Object> = MANUFACTURES;
   displayCar: Array<any>;
   nameOfModel: Object;
+  titleOfManufacture: Object;
 
   constructor() {}
+
+  changeToTitle(manufacture: any) {
+    this.manufactures.forEach((e) => {
+      for(const[key, value] of Object.entries(e)) {
+        if(value == manufacture) {
+          this.titleOfManufacture = e.title;
+        }
+      }
+    })
+  }
 
   findByModel(model: any) {
     this.models.forEach((e: any) => {
@@ -23,37 +36,15 @@ export class CarComponent implements OnInit {
         for(const[key, value] of Object.entries(e)) {
           if(key == model) {
             this.nameOfModel = value;
-            console.log(this.nameOfModel);
           }
         }
       }
     });
   }
-
-
-  // manufacture?: String;
-  // model?: String;
-  // description?: String;
-  // price?: Number;
-  // year?: Number;
-  // mileage?: Number;
-  // imageMain?: String;
-  // imageFront?: String;
-  // imageBack?: String; 
-
-  // constructor(manufacture: String, model: String, description: String, price: Number, year: Number, mileage: Number, imageMain: String) {
-  //     this.manufacture = manufacture;
-  //     this.model = model;
-  //     this.description = description;
-  //     this.price = price;
-  //     this.year = year;
-  //     this.mileage = mileage;
-  //     this.imageMain = imageMain;
-  // }
-
   ngOnInit(): void {
     this.displayCar = this.car
     this.findByModel(this.displayCar.model);
+    this.changeToTitle(this.displayCar.manufacture);
   }
 
 }
