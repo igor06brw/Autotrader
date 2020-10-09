@@ -5,6 +5,9 @@ import { ModelsService } from '../services/models.service';
 
 import { MANUFACTURES } from '../base/manufactures';
 import { MODELS } from '../base/models';
+import { PRICES } from '../base/prices';
+import { YEARS } from '../base/years';
+import { MILEAGES } from '../base/mileages';
 
 import { CAR_COLLECTION } from '../models/cars.collection'
 
@@ -16,11 +19,11 @@ import { CAR_COLLECTION } from '../models/cars.collection'
 })
 export class SearchCarComponent implements OnInit {
 
-  manufactures: Array<object> = MANUFACTURES; 
-  prices: Array<String> = ['40000', '30000', '15000', '10000', '7500'];
-  years: Array<String> = ['2020', '2019', '2018', '2017', '2016', '2015'];
-  mileages: Array<String> = ['2500', '3000', '4000', '5000', '7000'];
-  models = MODELS;
+  manufactures: Array<Object> = MANUFACTURES; 
+  prices: Array<Object> = PRICES;
+  years: Array<Object> = YEARS;
+  mileages: Array<Object> =  MILEAGES;
+  models: Array<Object> = MODELS;
   handleModels: Array<String> = [];
   
   cars = CAR_COLLECTION;
