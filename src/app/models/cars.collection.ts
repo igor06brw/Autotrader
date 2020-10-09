@@ -36,6 +36,41 @@ const car3: Car = {
     imageBack: 'bmw', 
     imageThumbnail: '../../assets/bmw/thumbnails/bmw_thumbnail_3.jpg'
 };
+const car4: Car = {
+    manufacture: 'landrover', 
+    model: 'evoque', 
+    price: 34086, 
+    year: 2019, 
+    mileage: 9876,
+    description: 'bmw',
+    imageMain: 'bmw',
+    imageFront: 'bmw',
+    imageBack: 'bmw', 
+    imageThumbnail: '../../assets/landrover/thumbnails/landrover_thumbnail_1.jpg'
+};
+const car5: Car = {
+    manufacture: 'mercedesbenz', 
+    model: 'eclass', 
+    price: 51980, 
+    year: 2015, 
+    mileage: 4567,
+    description: 'bmw',
+    imageMain: 'bmw',
+    imageFront: 'bmw',
+    imageBack: 'bmw', 
+    imageThumbnail: '../../assets/mercedes/thumbnails/mercedes_e_thumbnail_1.jpg'
+};
+const car6: Car = {
+    manufacture: 'mercedesbenz', 
+    model: 'eclass', 
+    price: 3400, 
+    year: 2020, 
+    mileage: 111,
+    description: 'bmw',
+    imageMain: 'bmw',
+    imageFront: 'bmw',
+    imageBack: 'bmw', 
+    imageThumbnail: '../../assets/mercedes/thumbnails/mercedes_e_thumbnail_2.jpg'
+};
 
-
-export let CAR_COLLECTION = [car1, car2, car3]; 
+export let CAR_COLLECTION = [car1, car2, car3, car4, car5, car6]; 
