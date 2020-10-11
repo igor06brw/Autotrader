@@ -13,7 +13,8 @@ import { ShowColorsOfCarComponent } from './show-colors-of-car/show-colors-of-ca
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CarComponent } from './car/car.component';
-import { CarDetailComponent } from './car/car-detail/car-detail.component'
+import { CarDetailComponent } from './car/car-detail/car-detail.component';
+import { HomeComponent } from './home/home.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CarDetailComponent } from './car/car-detail/car-detail.component'
     ShowColorsOfCarComponent,
     FooterComponent,
     CarComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
