@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MODELS } from '../base/models';
 import { MANUFACTURES } from '../base/manufactures';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,21 +11,21 @@ import { MANUFACTURES } from '../base/manufactures';
 })
 
 export class CarComponent implements OnInit {
-  @Input() car;
+  @Input() car: any;
 
   models: Array<Object> = MODELS;
   manufactures: Array<Object> = MANUFACTURES;
-  displayCar: Array<any>;
+  displayCar: any;
   nameOfModel: Object;
-  titleOfManufacture: Object;
+  titleOfManufacture: String;
 
   constructor() {}
 
   changeToTitle(manufacture: any) {
-    this.manufactures.forEach((e) => {
+    this.manufactures.forEach((e: any) => {
       for(const[key, value] of Object.entries(e)) {
         if(value == manufacture) {
-          this.titleOfManufacture = e.title;
+          return this.titleOfManufacture = e.title;
         }
       }
     })
@@ -35,11 +36,12 @@ export class CarComponent implements OnInit {
       if(e.hasOwnProperty(model)) {
         for(const[key, value] of Object.entries(e)) {
           if(key == model) {
-            this.nameOfModel = value;
+            return this.nameOfModel = value;
           }
         }
       }
     });
+    
   }
   ngOnInit(): void {
     this.displayCar = this.car

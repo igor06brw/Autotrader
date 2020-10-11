@@ -7,7 +7,7 @@
                         class="search-car__input search-car__make-select" 
                         formControlName="manufacture"
                         (change)="onManufacture($event.target.value)">
-                    <option value="all" selected>All</option>
+                    <option selected value="null">All</option>
                     <option 
                         *ngFor="let manufacture of manufactures" 
                         value="{{manufacture.name}}">
@@ -22,7 +22,7 @@
                     class="search-car__input search-car__model-select" 
                     formControlName="model">
 
-                    <option value="all" selected>All</option>
+                    <option value="all" [selected]="true">All</option>
                     <option 
                         *ngFor="let model of handleModels | keyvalue" 
                         value="{{model.key}}">
@@ -36,7 +36,7 @@
                         id="max-price" 
                         class="search-car__input search-car__max-price-select" 
                         formControlName="price">
-                    <option  value="0" selected>All</option>
+                    <option  value="0" [selected]="true">All</option>
                     <option 
                         *ngFor="let price of prices | keyvalue" 
                         value="{{price.key}}">
@@ -80,7 +80,12 @@
     </div>
     <div class="search-car__wrapper">
         <div class="search-car__display-results">
-            <car-card [car]="i" *ngFor="let car of cars ; let i index"></car-card>
+                <li class="search-car__display-link" *ngFor="let car of cars ; let i index">
+                    <a [routerLink]="['/car-detail', car.id]">
+                        <car-card [car]="i"></car-card>
+                    </a>
+                </li>
+            <!-- <car-card [car]="i" *ngFor="let car of cars ; let i index"></car-card> -->
         </div>
     </div>
 </section>

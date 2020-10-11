@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder } from '@angular/forms';
 import { ModelsService } from '../services/models.service';
-import { ManufacturesService } from '../services/manufactures.service';
+import { SearchCarsService } from '../services/search-cars.service';
 
 import { MANUFACTURES } from '../base/manufactures';
 import { MODELS } from '../base/models';
@@ -39,7 +39,9 @@ export class SearchCarComponent implements OnInit {
     mileage: ['']
   });
 
-  constructor(private fb: FormBuilder, private modelsService: ModelsService,  private manufacturesService: ManufacturesService) {}
+  constructor(private fb: FormBuilder,
+              private modelsService: ModelsService,  
+              private searchCarsService: SearchCarsService) {}
 
 
   ngOnInit(): void {
