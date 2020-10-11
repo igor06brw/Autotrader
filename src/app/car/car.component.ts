@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MODELS } from '../base/models';
 import { MANUFACTURES } from '../base/manufactures';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { MANUFACTURES } from '../base/manufactures';
 
 export class CarComponent implements OnInit {
   @Input() car;
+  titleId: Number;
 
   models: Array<Object> = MODELS;
   manufactures: Array<Object> = MANUFACTURES;
@@ -18,7 +20,7 @@ export class CarComponent implements OnInit {
   nameOfModel: Object;
   titleOfManufacture: String;
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
   changeToTitle(manufacture: any) {
     this.manufactures.forEach((e: any) => {
@@ -40,11 +42,13 @@ export class CarComponent implements OnInit {
         }
       }
     });
+    
   }
   ngOnInit(): void {
     this.displayCar = this.car
     this.findByModel(this.displayCar.model);
     this.changeToTitle(this.displayCar.manufacture);
+    this.titleId =+ this.route.snapshot.paramMap.get('id');
   }
 
 }

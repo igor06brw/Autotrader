@@ -1,6 +1,7 @@
 import { Car } from './car';
 
 const car1: Car = {
+    id: 0,
     manufacture: 'bmw', 
     model: 'series5', 
     price: 32999, 
@@ -13,6 +14,7 @@ const car1: Car = {
     imageThumbnail: '../../assets/bmw/thumbnails/bmw_thumbnail_1.jpg'
 };
 const car2: Car = {
+    id: 1,
     manufacture: 'bmw', 
     model: 'series5', 
     price: 36000, 
@@ -25,6 +27,7 @@ const car2: Car = {
     imageThumbnail: '../../assets/bmw/thumbnails/bmw_thumbnail_2.jpg'
 };
 const car3: Car = {
+    id: 2,
     manufacture: 'bmw', 
     model: 'series5', 
     price: 45039, 
@@ -37,6 +40,7 @@ const car3: Car = {
     imageThumbnail: '../../assets/bmw/thumbnails/bmw_thumbnail_3.jpg'
 };
 const car4: Car = {
+    id: 3,
     manufacture: 'landrover', 
     model: 'evoque', 
     price: 34086, 
@@ -49,6 +53,7 @@ const car4: Car = {
     imageThumbnail: '../../assets/landrover/thumbnails/landrover_thumbnail_1.jpg'
 };
 const car5: Car = {
+    id: 4,
     manufacture: 'mercedesbenz', 
     model: 'eclass', 
     price: 51980, 
@@ -61,6 +66,7 @@ const car5: Car = {
     imageThumbnail: '../../assets/mercedes/thumbnails/mercedes_e_thumbnail_1.jpg'
 };
 const car6: Car = {
+    id: 5,
     manufacture: 'mercedesbenz', 
     model: 'eclass', 
     price: 3400, 

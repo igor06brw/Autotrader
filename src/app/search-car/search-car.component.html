@@ -80,7 +80,13 @@
     </div>
     <div class="search-car__wrapper">
         <div class="search-car__display-results">
-            <car-card [car]="i" *ngFor="let car of cars ; let i index"></car-card>
+                <li *ngFor="let car of cars ; let i index">
+                    <a [routerLink]="['/car', car.id]">
+                        <car-card [car]="i"></car-card>
+                        <router-outlet></router-outlet>
+                    </a>
+                </li>
+            <!-- <car-card [car]="i" *ngFor="let car of cars ; let i index"></car-card> -->
         </div>
     </div>
 </section>
