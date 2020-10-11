@@ -11,8 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class CarComponent implements OnInit {
-  @Input() car;
-  titleId: Number;
+  @Input() car: any;
 
   models: Array<Object> = MODELS;
   manufactures: Array<Object> = MANUFACTURES;
@@ -20,7 +19,7 @@ export class CarComponent implements OnInit {
   nameOfModel: Object;
   titleOfManufacture: String;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor() {}
 
   changeToTitle(manufacture: any) {
     this.manufactures.forEach((e: any) => {
@@ -48,7 +47,6 @@ export class CarComponent implements OnInit {
     this.displayCar = this.car
     this.findByModel(this.displayCar.model);
     this.changeToTitle(this.displayCar.manufacture);
-    this.titleId =+ this.route.snapshot.paramMap.get('id');
   }
 
 }
