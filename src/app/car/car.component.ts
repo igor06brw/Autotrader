@@ -20,9 +20,9 @@ export class CarComponent implements OnInit {
   nameOfModel: Object;
   titleOfManufacture: String;
 
-  filteredCars: Array<Object> = this.searchCarsService.carArr;
+ 
 
-  constructor(private searchCarsService: SearchCarsService) {}
+  constructor() {}
 
 
   changeToTitle(manufacture: any) {
