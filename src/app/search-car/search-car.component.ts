@@ -48,11 +48,11 @@ export class SearchCarComponent implements OnInit {
   }
   
   onSubmit() {
-
     for(const[key, value] of Object.entries(this.searchCarsForm.value)) {
       if(value != null) {
-        this.filterCarsForm = Object.assign(this.filterCarsForm, {[key]: value})
-        console.log(key, value, this.filterCarsForm);
+        this.searchCarsService.filteredCar = Object.assign(this.searchCarsService.filteredCar, {[key]: value})
+        this.searchCarsService.onSearch();
+        console.log(this.searchCarsService.filteredCar);
       }
     }
   }
