@@ -27,6 +27,8 @@ export class SearchCarComponent implements OnInit {
   handleModels: Array<String> = [];
   
   
+  
+  filteredCars: Array<Object> = [];
   cars = CAR_COLLECTION;
 
 
@@ -45,6 +47,7 @@ export class SearchCarComponent implements OnInit {
 
 
   ngOnInit(): void {
+    console.log(this.filteredCars);
   }
   
   onSubmit() {
@@ -52,6 +55,7 @@ export class SearchCarComponent implements OnInit {
       if(value != null) {
         this.searchCarsService.filteredCar = Object.assign(this.searchCarsService.filteredCar, {[key]: value})
         this.searchCarsService.onSearch();
+        this.filteredCars = this.searchCarsService.carArr
         console.log(this.searchCarsService.filteredCar);
       }
     }

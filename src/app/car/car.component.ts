@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MODELS } from '../base/models';
 import { MANUFACTURES } from '../base/manufactures';
 import { ActivatedRoute } from '@angular/router';
+import { SearchCarsService } from '../services/search-cars.service';
 
 
 @Component({
@@ -19,7 +20,10 @@ export class CarComponent implements OnInit {
   nameOfModel: Object;
   titleOfManufacture: String;
 
-  constructor() {}
+  filteredCars: Array<Object> = this.searchCarsService.carArr;
+
+  constructor(private searchCarsService: SearchCarsService) {}
+
 
   changeToTitle(manufacture: any) {
     this.manufactures.forEach((e: any) => {
