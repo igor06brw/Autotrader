@@ -17,13 +17,21 @@ export class SearchCarsService {
   onSearch() {
     this.carArr = [];
     for(const[keyOfFilter, valueOfFilter] of Object.entries(this.filteredCar)) {
-      this.cars.forEach((e, i) => {
+      this.cars.forEach((e, index) => {
         for(const[keyOfCar, valueOfCar] of Object.entries(e)) {
           if(keyOfFilter == keyOfCar && valueOfFilter == valueOfCar) {
-            if(this.carArr.includes(this.cars[i]) == false) {
-              this.carArr.push(this.cars[i]);
-              console.log(this.carArr);
+            if(this.carArr.includes(this.cars[index]) == false) {
+              this.carArr.push(this.cars[index]);
             }
+          }
+          if(keyOfFilter == keyOfCar && valueOfFilter != valueOfCar) {
+            this.carArr.forEach((e, index) => {
+              for(const[keyOfDeleteCar, valueOfDeleteCar] of Object.entries(e)) {
+                if(keyOfFilter == keyOfDeleteCar && valueOfFilter != valueOfDeleteCar) {
+                  this.carArr.splice(index, 1);
+                }
+              }
+            });
           }
         }
       })

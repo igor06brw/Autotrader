@@ -78,5 +78,17 @@ const car6: Car = {
     imageBack: 'bmw', 
     imageThumbnail: '../../assets/mercedes/thumbnails/mercedes_e_thumbnail_2.jpg'
 };
-
-export let CAR_COLLECTION = [car1, car2, car3, car4, car5, car6]; 
+const car7: Car = {
+    id: 6,
+    manufacture: 'bmw', 
+    model: 'series3', 
+    price: 3400, 
+    year: 2020, 
+    mileage: 111,
+    description: 'bmw',
+    imageMain: 'bmw',
+    imageFront: 'bmw',
+    imageBack: 'bmw', 
+    imageThumbnail: '../../assets/mercedes/thumbnails/mercedes_e_thumbnail_2.jpg'
+};
+export let CAR_COLLECTION = [car1, car2, car3, car4, car5, car7]; 
