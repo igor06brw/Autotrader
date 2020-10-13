@@ -30,13 +30,13 @@ export class SearchCarComponent implements OnInit {
   cars = CAR_COLLECTION;
 
 
-
+  filterCarsForm: Object = {};
   searchCarsForm = this.fb.group({
-    manufacture: [''],
-    model: [''],
-    price: [''],
-    year: [''],
-    mileage: ['']
+    manufacture: [],
+    model: [],
+    price: [],
+    year: [],
+    mileage: []
   });
 
   constructor(private fb: FormBuilder,
@@ -48,7 +48,13 @@ export class SearchCarComponent implements OnInit {
   }
   
   onSubmit() {
-    console.log(this.searchCarsForm.value);
+
+    for(const[key, value] of Object.entries(this.searchCarsForm.value)) {
+      if(value != null) {
+        this.filterCarsForm = Object.assign(this.filterCarsForm, {[key]: value})
+        console.log(key, value, this.filterCarsForm);
+      }
+    }
   }
   onManufacture(value: string) {
     this.modelsService.choicedManufacture(value);
