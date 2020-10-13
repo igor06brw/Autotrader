@@ -34,7 +34,7 @@ export class ModelsService {
         return this.choiceModel(3)
         break;
       }
-      case "mercedesBenz": {
+      case "mercedesbenz": {
         return this.choiceModel(4)
         break;
       }
@@ -42,7 +42,7 @@ export class ModelsService {
         return this.choiceModel(5)
         break;
       }
-      case "landRover": {
+      case "landrover": {
         return this.choiceModel(6)
         break;
       }
