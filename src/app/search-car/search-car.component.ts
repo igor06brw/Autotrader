@@ -49,6 +49,10 @@ export class SearchCarComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.filteredCars);
   }
+
+  cleanForm() {
+    this.searchCarsForm.reset();
+  }
   
   onSubmit() {
     for(const[key, value] of Object.entries(this.searchCarsForm.value)) {
@@ -56,7 +60,7 @@ export class SearchCarComponent implements OnInit {
         this.searchCarsService.filteredCar = Object.assign(this.searchCarsService.filteredCar, {[key]: value})
         this.searchCarsService.onSearch();
         this.filteredCars = this.searchCarsService.carArr
-        console.log(this.searchCarsService.filteredCar);
+        this.cleanForm();
       }
     }
   }

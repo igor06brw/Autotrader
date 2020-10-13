@@ -16,7 +16,7 @@ const car1: Car = {
 const car2: Car = {
     id: 1,
     manufacture: 'bmw', 
-    model: 'series5', 
+    model: 'series3', 
     price: 36000, 
     year: 2018, 
     mileage: 999,
