@@ -10,7 +10,7 @@ import { PRICES } from '../base/prices';
 import { YEARS } from '../base/years';
 import { MILEAGES } from '../base/mileages';
 
-import { CAR_COLLECTION } from '../models/cars.collection'\\
+import { CAR_COLLECTION } from '../models/cars.collection';
 
 import { trigger, transition, animate, style } from '@angular/animations';
 
@@ -18,6 +18,18 @@ import { trigger, transition, animate, style } from '@angular/animations';
 @Component({
   selector: 'app-search-car',
   templateUrl: './search-car.component.html',
+  animations: [
+    trigger('displayFilteredCars', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('500ms ease-in-out', style({ opacity: 1 })),
+        
+      ]),
+      transition(':leave', [
+        animate('1000ms ease-in-out', style({ opacity: 0 }))
+      ])
+    ]),
+  ],
   styleUrls: ['./search-car.component.scss']
 })
 export class SearchCarComponent implements OnInit {
@@ -50,10 +62,18 @@ export class SearchCarComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.filteredCars);
+    setTimeout(()=>{
+      this.cars;
+      this.filteredCars
+   },1000)
   }
 
   cleanForm() {
     this.searchCarsForm.reset();
+  }
+
+  showResults() {
+
   }
   
   onSubmit() {
