@@ -41,14 +41,9 @@ export class SearchCarsService {
                   console.log(keyOfFilter, valueOfFilter, valueOfDeleteCar, this.carArr.splice(index, 1), index )
                   this.carArr.splice(index, 1);
                 }
-                // if(Object.keys(e)[4] == keyOfDeleteCar && valueOfDeleteCar == valueOfCar && valueOfFilter < valueOfDeleteCar) {
-                //   // console.log(keyOfFilter, valueOfFilter, valueOfDeleteCar, this.carArr.splice(index, 1), index )
-                //   this.carArr.splice(index, 1);
-                // }
-                // if(Object.keys(e)[5] == keyOfDeleteCar && valueOfDeleteCar == valueOfCar && valueOfFilter > valueOfDeleteCar) {
-                //   // console.log(keyOfFilter, valueOfFilter, valueOfDeleteCar, this.carArr.splice(index, 1), index )
-                //   this.carArr.splice(index, 1);
-                // }
+                if(Object.keys(e)[4] == keyOfFilter && valueOfDeleteCar == valueOfCar && valueOfDeleteCar < valueOfFilter) {
+                  this.carArr.splice(index, 1);
+                }
               }
             });
           }
