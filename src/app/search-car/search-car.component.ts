@@ -12,7 +12,7 @@ import { MILEAGES } from '../base/mileages';
 
 import { CAR_COLLECTION } from '../models/cars.collection';
 
-import { trigger, transition, animate, style } from '@angular/animations';
+import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
 
 
 @Component({
@@ -23,10 +23,9 @@ import { trigger, transition, animate, style } from '@angular/animations';
       transition(':enter', [
         style({ opacity: 0 }),
         animate('500ms ease-in-out', style({ opacity: 1 })),
-        
       ]),
       transition(':leave', [
-        animate('1000ms ease-in-out', style({ opacity: 0 }))
+        animate('500ms ease-in-out', style({ opacity: 0 }))
       ])
     ]),
   ],

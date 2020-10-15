@@ -19,7 +19,7 @@ export class CarComponent implements OnInit {
   displayCar: any;
   nameOfModel: Object;
   titleOfManufacture: String;
-
+   show = true;
  
 
   constructor() {}
@@ -51,6 +51,12 @@ export class CarComponent implements OnInit {
     this.displayCar = this.car
     this.findByModel(this.displayCar.model);
     this.changeToTitle(this.displayCar.manufacture);
+    setInterval(()=> {
+      this.show = !this.show;
+      setTimeout(()=> {
+        this.show = !this.show;
+      }, 0);
+    }, 4000);
   }
 
 }
