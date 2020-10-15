@@ -74,7 +74,7 @@
                 </select>
             </div>
             <div class="search-car__form-wrapper">
-                <button type="submit" class="search-car__show-result">Show Result</button>
+                <button (click)="showResults" type="submit" class="search-car__show-result">Show Result</button>
             </div>
         </form>
     </div>
@@ -82,14 +82,14 @@
         <div class="search-car__display-results">
             <ng-container *ngIf="filteredCars.length == 0; then thenBlock; else elseBlock"></ng-container>
             <ng-template #thenBlock>
-                <li class="search-car__display-link" *ngFor="let car of cars ; let i index" >
+                <li @displayFilteredCars class="search-car__display-link" *ngFor="let car of cars ; let i index">
                     <a [routerLink]="['/car-detail', car.id]">
                         <car-card [car]="i"></car-card>
                     </a>
                 </li>
             </ng-template>
             <ng-template #elseBlock>
-                <li class="search-car__display-link" *ngFor="let car of filteredCars ; let i index">
+                <li @displayFilteredCars class="search-car__display-link" *ngFor="let car of filteredCars ; let i index">
                     <a [routerLink]="['/car-detail', car.id]">
                         <car-card [car]="i"></car-card>
                     </a>

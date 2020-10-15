@@ -14,11 +14,15 @@ export class SearchCarsService {
   
   constructor() { }
 
+  onDeleteFilteredCars() {
+
+  }
+
   onSearch() {
     this.carArr = [];
     for(const[keyOfFilter, valueOfFilter] of Object.entries(this.filteredCar)) {
-      this.cars.forEach((e, index) => {
-        for(const[keyOfCar, valueOfCar] of Object.entries(e)) {
+      this.cars.forEach((el, index) => {
+        for(const[keyOfCar, valueOfCar] of Object.entries(el)) {
           if(keyOfFilter == keyOfCar && valueOfFilter == valueOfCar) {
             if(this.carArr.includes(this.cars[index]) == false) {
               this.carArr.push(this.cars[index]);
@@ -27,7 +31,17 @@ export class SearchCarsService {
           if(keyOfFilter == keyOfCar && valueOfFilter != valueOfCar) {
             this.carArr.forEach((e, index) => {
               for(const[keyOfDeleteCar, valueOfDeleteCar] of Object.entries(e)) {
-                if(keyOfFilter == keyOfDeleteCar && valueOfFilter != valueOfDeleteCar) {
+                console.log()
+
+                if(Object.keys(e)[2] == keyOfFilter && valueOfDeleteCar == valueOfCar && valueOfFilter != valueOfDeleteCar) {
+                  console.log('model')
+                  this.carArr.splice(index, 1);
+                }
+                if(Object.keys(e)[3] == keyOfFilter && valueOfDeleteCar == valueOfCar && valueOfDeleteCar > valueOfFilter) {
+                  console.log(keyOfFilter, valueOfFilter, valueOfDeleteCar, this.carArr.splice(index, 1), index )
+                  this.carArr.splice(index, 1);
+                }
+                if(Object.keys(e)[4] == keyOfFilter && valueOfDeleteCar == valueOfCar && valueOfDeleteCar < valueOfFilter) {
                   this.carArr.splice(index, 1);
                 }
               }
@@ -36,5 +50,6 @@ export class SearchCarsService {
         }
       })
     }
+    console.log(this.carArr)
   }
 }
