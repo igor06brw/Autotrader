@@ -61,10 +61,8 @@ export class SearchCarComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.filteredCars);
-    setTimeout(()=>{
-      this.cars;
-      this.filteredCars
-   },1000)
+    
+
   }
 
   cleanForm() {
@@ -76,14 +74,19 @@ export class SearchCarComponent implements OnInit {
   }
   
   onSubmit() {
-    for(const[key, value] of Object.entries(this.searchCarsForm.value)) {
-      if(value != null) {
+    let convertedForm = { ...this.searchCarsForm.value, price: +this.searchCarsForm.value.price, year: +this.searchCarsForm.value.year, mileage: +this.searchCarsForm.value.mileage  };
+  
+    for(const[key, value] of Object.entries(convertedForm)) {
+      if(value != 0 && value != null) {
         this.searchCarsService.filteredCar = Object.assign(this.searchCarsService.filteredCar, {[key]: value})
+        console.log(this.searchCarsService.filteredCar);
         this.searchCarsService.onSearch();
         this.filteredCars = this.searchCarsService.carArr
         this.cleanForm();
       }
     }
+    convertedForm = {};
+
   }
   onManufacture(value: string) {
     this.modelsService.choicedManufacture(value);
