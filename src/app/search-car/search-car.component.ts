@@ -53,8 +53,6 @@ export class SearchCarComponent implements OnInit {
     year: [],
     mileage: []
   });
-
-  convertedForm = { ...this.searchCarsForm.value, price: +this.searchCarsForm.value.price, year: +this.searchCarsForm.value.year, mileage: +this.searchCarsForm.value.mileage  };
   constructor(private fb: FormBuilder,
               private modelsService: ModelsService,  
               private searchCarsService: SearchCarsService) {}
@@ -75,8 +73,8 @@ export class SearchCarComponent implements OnInit {
   }
   
   onSubmit() {
-   
-    for(const[key, value] of Object.entries(this.convertedForm)) {
+   let convertedForm = { ...this.searchCarsForm.value, price: +this.searchCarsForm.value.price, year: +this.searchCarsForm.value.year, mileage: +this.searchCarsForm.value.mileage  };
+    for(const[key, value] of Object.entries(convertedForm)) {
       if(value != 0 && value != null) {
         this.searchCarsService.filteredCar = Object.assign(this.searchCarsService.filteredCar, {[key]: value})
         console.log(this.searchCarsService.filteredCar);
@@ -85,7 +83,7 @@ export class SearchCarComponent implements OnInit {
         this.cleanForm();
       }
     }
-    this.convertedForm = {};
+    convertedForm = {};
 
   }
   onManufacture(value: string) {
