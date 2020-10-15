@@ -20,36 +20,44 @@ export class SearchCarsService {
 
   onSearch() {
     this.carArr = [];
-    for(const[keyOfFilter, valueOfFilter] of Object.entries(this.filteredCar)) {
-      this.cars.forEach((el, index) => {
-        for(const[keyOfCar, valueOfCar] of Object.entries(el)) {
-          if(keyOfFilter == keyOfCar && valueOfFilter == valueOfCar) {
-            if(this.carArr.includes(this.cars[index]) == false) {
-              this.carArr.push(this.cars[index]);
+    console.log(this.filteredCar);
+    Object.entries(this.filteredCar).forEach(([keyOfFilterCar, valueOfFilterCar], indexOfFilterCar) => {
+      this.cars.forEach((car, indexOfCars) => {
+        Object.entries(car).forEach(([keyOfCar, valueOfCar], indexOfCar) => {
+          if(this.carArr.includes(this.cars[indexOfCars]) == false) { 
+            // if('manufacture' == keyOfFilterCar && valueOfCar == valueOfFilterCar) {
+            //   this.carArr.push(this.cars[indexOfCars]);
+            // }
+            // if('model' == keyOfFilterCar && valueOfCar == valueOfFilterCar) {
+            //   this.carArr.push(this.cars[indexOfCars]);
+            // }
+            // if('price' == keyOfFilterCar && valueOfCar < valueOfFilterCar) {
+            //   this.carArr.push(this.cars[indexOfCars]);
+            // }
+            console.log('price' == keyOfFilterCar, keyOfCar == keyOfFilterCar, valueOfFilterCar, valueOfCar);
+            if('price' == keyOfFilterCar &&  keyOfCar == keyOfFilterCar && valueOfCar < valueOfFilterCar) {
+              this.carArr.push(this.cars[indexOfCars]);
             }
           }
-          if(keyOfFilter == keyOfCar && valueOfFilter != valueOfCar) {
-            this.carArr.forEach((e, index) => {
-              for(const[keyOfDeleteCar, valueOfDeleteCar] of Object.entries(e)) {
-                console.log()
-
-                if(Object.keys(e)[2] == keyOfFilter && valueOfDeleteCar == valueOfCar && valueOfFilter != valueOfDeleteCar) {
-                  console.log('model')
-                  this.carArr.splice(index, 1);
-                }
-                if(Object.keys(e)[3] == keyOfFilter && valueOfDeleteCar == valueOfCar && valueOfDeleteCar > valueOfFilter) {
-                  console.log(keyOfFilter, valueOfFilter, valueOfDeleteCar, this.carArr.splice(index, 1), index )
-                  this.carArr.splice(index, 1);
-                }
-                if(Object.keys(e)[4] == keyOfFilter && valueOfDeleteCar == valueOfCar && valueOfDeleteCar < valueOfFilter) {
-                  this.carArr.splice(index, 1);
-                }
-              }
-            });
-          }
-        }
+        });
+        // if('manufacture' == keyOfFilterCar && valueOfCar == valueOfFilterCar) {
+        //   this.carArr.push(this.cars[indexOfCar]);
+        //   console.log(this.carArr);
+        // } else {
+        //   return null;
+        // }
       })
-    }
+      // this.cars.forEach((car, index) => {
+      //   Object.entries(car).forEach(([keyOfCar, valueOfCar], indexOfCar) => {   
+      //     if('manufacture' == keyOfFilterCar && keyOfCar == keyOfFilterCar && valueOfCar == valueOfFilterCar) {
+      //       return this.carArr.push(this.cars[index]);
+      //     }
+      //     if('model' == keyOfFilterCar && valueOfCar != valueOfFilterCar) {
+      //       console.log('sss');
+      //     }
+      //   });
+      // });
+    });
     console.log(this.carArr)
   }
 }

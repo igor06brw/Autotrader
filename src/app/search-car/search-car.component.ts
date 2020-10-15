@@ -73,17 +73,33 @@ export class SearchCarComponent implements OnInit {
   }
   
   onSubmit() {
-   let convertedForm = { ...this.searchCarsForm.value, price: +this.searchCarsForm.value.price, year: +this.searchCarsForm.value.year, mileage: +this.searchCarsForm.value.mileage  };
-    for(const[key, value] of Object.entries(convertedForm)) {
+    let convertedForm = { ...this.searchCarsForm.value, price: +this.searchCarsForm.value.price, year: +this.searchCarsForm.value.year, mileage: +this.searchCarsForm.value.mileage };
+    Object.entries(convertedForm).forEach(([key, value]) => {
       if(value != 0 && value != null) {
         this.searchCarsService.filteredCar = Object.assign(this.searchCarsService.filteredCar, {[key]: value})
-        console.log(this.searchCarsService.filteredCar);
-        this.searchCarsService.onSearch();
-        this.filteredCars = this.searchCarsService.carArr
-        this.cleanForm();
       }
-    }
-    convertedForm = {};
+    })
+    this.searchCarsService.onSearch();
+    this.filteredCars = this.searchCarsService.carArr
+   
+  //  for(const[key, value] of Object.entries(convertedForm)) {
+  //     if(value != 0 && value != null) {
+  //       this.searchCarsService.filteredCar = Object.assign(this.searchCarsService.filteredCar, {[key]: value})
+  //       console.log(this.searchCarsService.filteredCar);
+  //       this.searchCarsService.onSearch();
+  //       this.filteredCars = this.searchCarsService.carArr
+  //       this.cleanForm();
+  //     }
+  //   }
+  //   console.log(this.searchCarsForm.value, convertedForm)
+  //   this.searchCarsForm = this.fb.group({
+  //     manufacture: [],
+  //     model: [],
+  //     price: [],
+  //     year: [],
+  //     mileage: []
+  //   });
+  //   console.log(this.searchCarsForm.value, convertedForm)
 
   }
   onManufacture(value: string) {
