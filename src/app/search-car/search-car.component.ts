@@ -73,14 +73,13 @@ export class SearchCarComponent implements OnInit {
   }
   
   onSubmit() {
-    let convertedForm = { ...this.searchCarsForm.value, price: +this.searchCarsForm.value.price, year: +this.searchCarsForm.value.year, mileage: +this.searchCarsForm.value.mileage };
-    Object.entries(convertedForm).forEach(([key, value]) => {
-      if(value != 0 && value != null) {
-        this.searchCarsService.filteredCar = Object.assign(this.searchCarsService.filteredCar, {[key]: value})
-      }
+    Object.entries(this.searchCarsForm.value).forEach(([key, value]) => {
+        this.searchCarsService.filterCar = Object.assign(this.searchCarsService.filterCar, {[key]: value})
     })
+    console.log(this.searchCarsForm.value)
     this.searchCarsService.onSearch();
     this.filteredCars = this.searchCarsService.carArr
+    this.cleanForm();
    
   //  for(const[key, value] of Object.entries(convertedForm)) {
   //     if(value != 0 && value != null) {
