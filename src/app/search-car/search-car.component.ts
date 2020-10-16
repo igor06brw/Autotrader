@@ -12,7 +12,7 @@ import { MILEAGES } from '../base/mileages';
 
 import { CAR_COLLECTION } from '../models/cars.collection';
 
-import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
+import { trigger, transition, animate, style } from '@angular/animations';
 
 
 @Component({
@@ -58,18 +58,10 @@ export class SearchCarComponent implements OnInit {
               private searchCarsService: SearchCarsService) {}
 
 
-  ngOnInit(): void {
-    console.log(this.filteredCars);
-    
-
-  }
+  ngOnInit(): void {}
 
   cleanForm() {
     this.searchCarsForm.reset();
-  }
-
-  showResults() {
-
   }
   
   onSubmit() {
@@ -80,27 +72,8 @@ export class SearchCarComponent implements OnInit {
     this.searchCarsService.onSearch();
     this.filteredCars = this.searchCarsService.carArr
     this.cleanForm();
-   
-  //  for(const[key, value] of Object.entries(convertedForm)) {
-  //     if(value != 0 && value != null) {
-  //       this.searchCarsService.filteredCar = Object.assign(this.searchCarsService.filteredCar, {[key]: value})
-  //       console.log(this.searchCarsService.filteredCar);
-  //       this.searchCarsService.onSearch();
-  //       this.filteredCars = this.searchCarsService.carArr
-  //       this.cleanForm();
-  //     }
-  //   }
-  //   console.log(this.searchCarsForm.value, convertedForm)
-  //   this.searchCarsForm = this.fb.group({
-  //     manufacture: [],
-  //     model: [],
-  //     price: [],
-  //     year: [],
-  //     mileage: []
-  //   });
-  //   console.log(this.searchCarsForm.value, convertedForm)
-
   }
+
   onManufacture(value: string) {
     this.modelsService.choicedManufacture(value);
     this.handleModels = this.modelsService.choicedModels

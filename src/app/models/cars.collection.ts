@@ -91,4 +91,4 @@ const car7: Car = {
     imageBack: '', 
     imageThumbnail: '../../assets/mercedes/thumbnails/mercedes_e_thumbnail_2.jpg'
 };
-export let CAR_COLLECTION = [car1, car2, car3, car4, car5, car7]; 
+export let CAR_COLLECTION = [car1, car2, car3, car4, car5, car6, car7]; 
