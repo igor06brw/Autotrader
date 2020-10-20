@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CarComponent } from './car/car.component';
 import { CarDetailComponent } from './car/car-detail/car-detail.component';
 import { HomeComponent } from './home/home.component'
+import { NguCarouselModule } from '@ngu/carousel';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HomeComponent } from './home/home.component'
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NguCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

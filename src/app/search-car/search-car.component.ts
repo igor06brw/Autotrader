@@ -42,6 +42,8 @@ export class SearchCarComponent implements OnInit {
   
   
   filteredCars: Array<Object> = [];
+  galleryCars: Array<Object> = [];
+  galleryCarsButton: Array<Number> = [];
   cars = CAR_COLLECTION;
 
 
@@ -58,9 +60,28 @@ export class SearchCarComponent implements OnInit {
               private searchCarsService: SearchCarsService) {}
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
-  cleanForm() {
+  onGallery() {
+    let tempVar: number = 0;
+    for(let i = 0; i < this.cars.length; i++) {
+      if(i % 6 == 0) {
+        tempVar += 1;
+        this.galleryCarsButton.push(tempVar)
+        console.log(this.galleryCarsButton);
+      }
+    }
+    for(let i = 0; i < this.cars.length; i++) {
+      if(i % 6 == 0) {
+        this.galleryCars.push(this.cars[i])
+      }
+      this.galleryCars.push(this.cars[i])
+    }
+    console.log(this.galleryCars);
+  }
+
+  onCleanForm() {
     this.searchCarsForm.reset();
   }
   
@@ -71,7 +92,8 @@ export class SearchCarComponent implements OnInit {
     console.log(this.searchCarsForm.value)
     this.searchCarsService.onSearch();
     this.filteredCars = this.searchCarsService.carArr
-    this.cleanForm();
+    this.onCleanForm();
+    this.onGallery();
   }
 
   onManufacture(value: string) {
