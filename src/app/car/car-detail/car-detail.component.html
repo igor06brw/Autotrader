@@ -1,6 +1,33 @@
 
 <section class="car-detail__section">
-    <p>car-detail works!</p>
-    {{titleId}}
-    <a [routerLink]="'/'">Go To Home</a>  
+
+    <article class="car-detail__article">
+        <div class="car-detail__col">
+            <div class="car-detail__image">
+                <img src={{routedCar.imageThumbnail}} alt={{routedCar.manufacture}}{{routedCar.model}} class="img-thumbnail">
+            </div>
+        </div>
+        <div class="car-detail__col">
+            <div class="car-detail__heading">
+                <h2 class="manufacture">{{routedCar.manufacture}}</h2><h2 class="model">{{routedCar.model}}</h2>
+            </div>
+            <div class="car-detail__description">
+                <p class="description">{{routedCar.description}}</p>
+            </div>
+            <div class="car-detail__wrapper">
+                <div class="mileage">
+                    <h5 class="mileage__heading">Mileage: <span class="mileage__heading--colored">{{routedCar.mileage}}</span></h5> 
+                </div>
+                <div class="year">
+                    <h5 class="year__heading">Year: <span class="year__heading--colored">{{routedCar.year}}</span></h5>
+                </div>
+                <div class="price">
+                    <h5 class="price__heading">Price: $<span class="price__heading--colored">{{routedCar.price}}</span></h5>
+                </div>
+            </div>
+        </div>
+          <div class="car-detail__button">
+            <a [routerLink]="'/'">Close</a>
+          </div>
+      </article>
 </section>
