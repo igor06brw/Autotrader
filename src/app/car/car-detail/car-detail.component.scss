@@ -6,6 +6,15 @@
         width: 90vw;
         height: 90vh;
         transform: translate(-50%, 0px);
-        background-color: rebeccapurple;
+        background-color:#fff;
+    }
+    &__article {
+        display: flex;
+
+    }
+    &__image {
+        & > img {
+            
+        }
     }
 }

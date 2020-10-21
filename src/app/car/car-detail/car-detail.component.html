@@ -1,7 +1,24 @@
 
 <section class="car-detail__section">
-    <p>car-detail works!</p>
-    {{routedCar.manufacture}}
-    
-    <a [routerLink]="'/'">Go To Home</a>  
+
+    <article class="car-detail__article">
+          <div class="car-detail__image">
+            <img src={{routedCar.imageThumbnail}} alt={{routedCar.manufacture}}{{routedCar.model}} class="img-thumbnail">
+          </div>
+          <div class="car-detail__manufacture">
+            {{routedCar.manufacture}}
+          </div>
+          <div class="car-detail__model">
+            {{routedCar.model}}
+          </div>
+          <div class="car-detail__description">
+            {{routedCar.description}}
+          </div>
+          <div class="car-detail__price">
+            {{routedCar.price}}
+          </div>
+          <div class="car-detail__button">
+            <a [routerLink]="'/'">Close</a>
+          </div>
+      </article>
 </section>

@@ -11,7 +11,6 @@ export class CarDetailComponent implements OnInit {
 
 
   private titleId: Number;
-  private manufacture: String;
   private cars = CAR_COLLECTION;
   public routedCar: any;
 
