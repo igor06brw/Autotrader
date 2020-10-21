@@ -1,0 +1,11 @@
+.car-detail {
+    &__section {
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        width: 90vw;
+        height: 90vh;
+        transform: translate(-50%, 0px);
+        background-color: rebeccapurple;
+    }
+}
