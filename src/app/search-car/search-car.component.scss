@@ -91,13 +91,9 @@
         text-decoration: none;
         list-style: none;
         display: flex;
+        max-width: 33%;
         flex-wrap: wrap;
-        max-width: 100%;
-        width: 33%;
-        height: 150px;
         border-bottom: 1px solid rgba(114, 114, 114, 0.2);
-
-        
 
         & > a {
             text-decoration: none;
@@ -165,6 +161,46 @@
         }
         &__display-results {
             height: 480px;
+        }
+    }
+}
+@media (max-width: 992px) {
+    .search-car {
+        &__form {
+            &-wrapper {
+                &:nth-last-child(n+5) {
+                    min-width: 12em;
+                }
+                &:last-of-type {
+                    width: auto;
+                }
+            }
+        }
+        &__display-results {
+           height: 480px;
+        }
+        &__display-link {
+            max-width: 50%;
+        }
+    }
+}
+@media (min-width: 993px) {
+    .search-car {
+        &__form {
+            &-wrapper {
+                &:nth-last-child(n+5) {
+                    min-width: 12em;
+                }
+                &:last-of-type {
+                    width: auto;
+                }
+            }
+        }
+        &__display-results {
+           height: 320px;
+        }
+        &__display-link {
+            max-width: 33%;
         }
     }
 }

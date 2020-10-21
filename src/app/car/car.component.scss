@@ -1,5 +1,6 @@
 .car {
     &__card {
+        width: 100%;
         padding: 20px 10px 0px 10px;
     }
     &__link {
@@ -38,5 +39,26 @@
     }
     &__production {
         font-size: 0.85em;
+    }
+}
+
+@media only screen and (min-device-width: 668px) and (max-device-width: 992px) {
+    .search-car {
+        &__form {
+            &-wrapper {
+                &:nth-last-child(n+5) {
+                    min-width: 12em;
+                }
+                &:last-of-type {
+                    width: auto;
+                }
+            }
+        }
+        &__display-results {
+           height: 480px;
+        }
+        &__display-link {
+            max-width: 50%;
+        }
     }
 }

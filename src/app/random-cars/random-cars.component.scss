@@ -121,3 +121,19 @@
         grid-gap: 40px;
     }
 }
+
+
+@media only screen and (min-device-width: 668px) and (max-device-width: 992px) {
+    .random-cars {
+        &__section {
+            padding-top: 300px;
+        }
+    }
+}
+@media only screen and (min-device-width: 993px) {
+    .random-cars {
+        &__section {
+            padding-top: 150px;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 import { FormBuilder } from '@angular/forms';
 import { ModelsService } from '../services/models.service';
@@ -13,6 +13,7 @@ import { MILEAGES } from '../base/mileages';
 import { CAR_COLLECTION } from '../models/cars.collection';
 
 import { trigger, transition, animate, style } from '@angular/animations';
+import { WindowService } from '../services/window.service';
 
 
 @Component({
@@ -58,9 +59,21 @@ export class SearchCarComponent implements OnInit {
 
   slides: any = [[]];
 
+  @ViewChild('displayResults') displayResults: ElementRef;
+  scrHeight:any;
+  scrWidth:any;
+
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?) {
+      this.scrHeight = window.innerHeight;
+      this.scrWidth = window.innerWidth;
+      console.log(this.scrHeight, this.scrWidth, this.displayResults);
+}
+
   constructor(private fb: FormBuilder,
               private modelsService: ModelsService,  
-              private searchCarsService: SearchCarsService) {}
+              private searchCarsService: SearchCarsService) 
+              { this.getScreenSize(); }
 
   
   chunk(arr: any, chunkSize:any) {
@@ -90,6 +103,8 @@ export class SearchCarComponent implements OnInit {
     this.modelsService.choicedManufacture(value);
     this.handleModels = this.modelsService.choicedModels
   }
+
+  
 
   ngOnInit(): void {
     this.filteredCars = this.cars;
