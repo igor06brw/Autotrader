@@ -89,7 +89,9 @@
     &__display-link {
         text-decoration: none;
         list-style: none;
-        
+        display: flex;
+        max-width: 33%;
+        flex-wrap: wrap;
 
         & > a {
             text-decoration: none;
@@ -113,6 +115,46 @@
         &__show-result {
             margin: 0 auto;
             width: 40vw;
+        }
+    }
+}
+@media (max-width: 992px) {
+    .search-car {
+        &__form {
+            &-wrapper {
+                &:nth-last-child(n+5) {
+                    min-width: 12em;
+                }
+                &:last-of-type {
+                    width: auto;
+                }
+            }
+        }
+        &__display-results {
+           height: 480px;
+        }
+        &__display-link {
+            max-width: 50%;
+        }
+    }
+}
+@media (min-width: 993px) {
+    .search-car {
+        &__form {
+            &-wrapper {
+                &:nth-last-child(n+5) {
+                    min-width: 12em;
+                }
+                &:last-of-type {
+                    width: auto;
+                }
+            }
+        }
+        &__display-results {
+           height: 320px;
+        }
+        &__display-link {
+            max-width: 33%;
         }
     }
 }

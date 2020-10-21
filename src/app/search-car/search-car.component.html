@@ -79,7 +79,7 @@
         </form>
     </div>
     <div class="search-car__wrapper">
-        <div class="search-car__display-results">
+        <div #displayResults class="search-car__display-results">
             <mdb-carousel @displayFilteredCars [isControls]="true" class="carousel-multi-item multi-animation" [animation]="'slide'">
                 <mdb-slide *ngFor="let cards of slides; let i = index">
                     <li  class="search-car__display-link" *ngFor="let car of cards ; let i index" >
