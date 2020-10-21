@@ -23,8 +23,6 @@ export class SearchCarsService {
 
 
 
-  onDeleteFilteredCars(param: any) {
-  }
   convertToNumber(param: Object) {
     Object.entries(param).forEach(([key, value], index) => {
       if(index == 2 || index == 3 || index == 4) {

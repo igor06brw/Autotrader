@@ -12,7 +12,7 @@ import { MILEAGES } from '../base/mileages';
 
 import { CAR_COLLECTION } from '../models/cars.collection';
 
-import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
+import { trigger, transition, animate, style } from '@angular/animations';
 
 
 @Component({
@@ -42,6 +42,8 @@ export class SearchCarComponent implements OnInit {
   
   
   filteredCars: Array<Object> = [];
+  galleryCars: Array<Object> = [];
+  galleryCarsButton: Array<Number> = [];
   cars = CAR_COLLECTION;
 
 
@@ -53,23 +55,24 @@ export class SearchCarComponent implements OnInit {
     year: [],
     mileage: []
   });
+
+  slides: any = [[]];
+
   constructor(private fb: FormBuilder,
               private modelsService: ModelsService,  
               private searchCarsService: SearchCarsService) {}
 
-
-  ngOnInit(): void {
-    console.log(this.filteredCars);
-    
-
+  
+  chunk(arr: any, chunkSize:any) {
+    let R = [];
+    for (let i = 0, len = arr.length; i < len; i += chunkSize) {
+      R.push(arr.slice(i, i + chunkSize));
+    }
+    return R;
   }
 
-  cleanForm() {
+  onCleanForm() {
     this.searchCarsForm.reset();
-  }
-
-  showResults() {
-
   }
   
   onSubmit() {
@@ -79,31 +82,18 @@ export class SearchCarComponent implements OnInit {
     console.log(this.searchCarsForm.value)
     this.searchCarsService.onSearch();
     this.filteredCars = this.searchCarsService.carArr
-    this.cleanForm();
-   
-  //  for(const[key, value] of Object.entries(convertedForm)) {
-  //     if(value != 0 && value != null) {
-  //       this.searchCarsService.filteredCar = Object.assign(this.searchCarsService.filteredCar, {[key]: value})
-  //       console.log(this.searchCarsService.filteredCar);
-  //       this.searchCarsService.onSearch();
-  //       this.filteredCars = this.searchCarsService.carArr
-  //       this.cleanForm();
-  //     }
-  //   }
-  //   console.log(this.searchCarsForm.value, convertedForm)
-  //   this.searchCarsForm = this.fb.group({
-  //     manufacture: [],
-  //     model: [],
-  //     price: [],
-  //     year: [],
-  //     mileage: []
-  //   });
-  //   console.log(this.searchCarsForm.value, convertedForm)
-
+    this.slides = this.chunk(this.filteredCars, 6);
+    this.onCleanForm();
   }
+
   onManufacture(value: string) {
     this.modelsService.choicedManufacture(value);
     this.handleModels = this.modelsService.choicedModels
+  }
+
+  ngOnInit(): void {
+    this.filteredCars = this.cars;
+    this.slides = this.chunk(this.filteredCars, 6);
   }
 }
 

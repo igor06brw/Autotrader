@@ -74,28 +74,21 @@
                 </select>
             </div>
             <div class="search-car__form-wrapper">
-                <button (click)="showResults" type="submit" class="search-car__show-result">Show Result</button>
+                <button type="submit" class="search-car__show-result">Show Result</button>
             </div>
         </form>
     </div>
     <div class="search-car__wrapper">
         <div class="search-car__display-results">
-            <ng-container *ngIf="filteredCars.length == 0; then thenBlock; else elseBlock"></ng-container>
-            <ng-template #thenBlock>
-                <li @displayFilteredCars class="search-car__display-link" *ngFor="let car of cars ; let i index">
-                    <a [routerLink]="['/car-detail', car.id]">
-                        <car-card [car]="i"></car-card>
-                    </a>
-                </li>
-            </ng-template>
-            <ng-template #elseBlock>
-                <li @displayFilteredCars class="search-car__display-link" *ngFor="let car of filteredCars ; let i index">
-                    <a [routerLink]="['/car-detail', car.id]">
-                        <car-card [car]="i"></car-card>
-                    </a>
-                </li>
-            </ng-template>
-            <!-- <car-card [car]="i" *ngFor="let car of cars ; let i index"></car-card> -->
+            <mdb-carousel @displayFilteredCars [isControls]="true" class="carousel-multi-item multi-animation" [animation]="'slide'">
+                <mdb-slide *ngFor="let cards of slides; let i = index">
+                    <li  class="search-car__display-link" *ngFor="let car of cards ; let i index" >
+                        <a [routerLink]="['/car-detail', car.id]">
+                            <car-card [car]="i"></car-card>
+                        </a>
+                    </li>
+                </mdb-slide>
+            </mdb-carousel>
         </div>
     </div>
 </section>
