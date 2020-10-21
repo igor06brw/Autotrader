@@ -82,6 +82,7 @@ export class SearchCarComponent implements OnInit {
     console.log(this.searchCarsForm.value)
     this.searchCarsService.onSearch();
     this.filteredCars = this.searchCarsService.carArr
+    this.slides = this.chunk(this.filteredCars, 6);
     this.onCleanForm();
   }
 
@@ -91,7 +92,8 @@ export class SearchCarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.slides = this.chunk(this.cars, 6);
+    this.filteredCars = this.cars;
+    this.slides = this.chunk(this.filteredCars, 6);
   }
 }
 
