@@ -1,17 +1,39 @@
 .car-detail {
     &__section {
-        position: absolute;
-        top: 95%;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background:rgba(0, 0, 0, 0.8);
+
+        &::before {
+            content: '';
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            backdrop-filter: blur(10px);
+        }
+        
+
+    }
+    &__article {
+        z-index: 100000;
+        position: fixed;
+        top: 8%;
         left: 50%;
         width: 90vw;
         height: 90vh;
         transform: translate(-50%, 0px);
         background-color:#fff;
         border-radius: 1em;
-    }
-    &__article {
         display: flex;
         flex-wrap: wrap;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 
     }
     &__col {
@@ -31,16 +53,14 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        text-align:left;
+        
         & > * {
             color: #333333;
             text-transform: uppercase;
+            font-size: 3em;
         }
         & > .manufacture {
             padding: 0 20px 0 0;
-        }
-        & > .model {
-            
         }
     }
 
@@ -75,20 +95,17 @@
         align-items: center;
         padding-top: 40px;
         & > * {
-            padding-right: 30px;
-        }
-        & > .mileage{
-            
-        }
-        & > .year {
-            
-        }
-        & > .price {
-            
+            padding-right: 50px;
+            color: #333333;
         }
     }
+}
 
-    &__manufacture {
-
+.heading {
+    font-size: 2em;
+    color: #555555;
+    &--modified {
+        color: #1b1b1b;
+        padding-left: 0.3em;
     }
 }
