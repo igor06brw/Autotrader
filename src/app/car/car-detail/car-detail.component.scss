@@ -68,13 +68,17 @@
         padding-top: 30px;
         & > .description {
             width: 75%;
+            font-size: 1vw;
             line-height: 2em;
             letter-spacing: 0.1em;
+            max-height: 350px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
     &__button {
-        width: 50%;
-        margin: 50px auto;
+        
+        margin: 20px auto;
         text-align: center;
         & > * {
             background-color:#334455;
@@ -162,10 +166,9 @@
             width: 100%;
             padding-top: 10px;
             & > .description {
-                font-size: 0.8em;
+                font-size: 0.7em;
                 width: 100%;
-                height: 50px;
-                overflow: hidden;
+                height: 120px;
                 line-height: 2em;
                 letter-spacing: 0.1em;
                 white-space: wrap;
