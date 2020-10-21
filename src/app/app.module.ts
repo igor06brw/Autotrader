@@ -14,8 +14,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CarComponent } from './car/car.component';
 import { CarDetailComponent } from './car/car-detail/car-detail.component';
-import { HomeComponent } from './home/home.component'
-import { NguCarouselModule } from '@ngu/carousel';
+import { HomeComponent } from './home/home.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { NguCarouselModule } from '@ngu/carousel';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NguCarouselModule
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -55,30 +55,20 @@ export class SearchCarComponent implements OnInit {
     year: [],
     mileage: []
   });
+
+  slides: any = [[]];
+
   constructor(private fb: FormBuilder,
               private modelsService: ModelsService,  
               private searchCarsService: SearchCarsService) {}
 
-
-  ngOnInit(): void {
-  }
-
-  onGallery() {
-    let tempVar: number = 0;
-    for(let i = 0; i < this.cars.length; i++) {
-      if(i % 6 == 0) {
-        tempVar += 1;
-        this.galleryCarsButton.push(tempVar)
-        console.log(this.galleryCarsButton);
-      }
+  
+  chunk(arr: any, chunkSize:any) {
+    let R = [];
+    for (let i = 0, len = arr.length; i < len; i += chunkSize) {
+      R.push(arr.slice(i, i + chunkSize));
     }
-    for(let i = 0; i < this.cars.length; i++) {
-      if(i % 6 == 0) {
-        this.galleryCars.push(this.cars[i])
-      }
-      this.galleryCars.push(this.cars[i])
-    }
-    console.log(this.galleryCars);
+    return R;
   }
 
   onCleanForm() {
@@ -93,12 +83,15 @@ export class SearchCarComponent implements OnInit {
     this.searchCarsService.onSearch();
     this.filteredCars = this.searchCarsService.carArr
     this.onCleanForm();
-    this.onGallery();
   }
 
   onManufacture(value: string) {
     this.modelsService.choicedManufacture(value);
     this.handleModels = this.modelsService.choicedModels
+  }
+
+  ngOnInit(): void {
+    this.slides = this.chunk(this.cars, 6);
   }
 }
 

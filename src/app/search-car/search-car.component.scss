@@ -80,7 +80,6 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
         margin-top: 20px;
     }
     &__display-link {
@@ -113,3 +112,15 @@
         }
     }
 }
+
+
+
+.carousel-item {
+    overflow: hidden;
+    z-index: -100;
+    &.active, &.carousel-item-right, &.carousel-item-next {
+      display: flex !important;
+      flex-wrap: wrap;
+      z-index: 2;
+    }
+  }

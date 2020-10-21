@@ -81,24 +81,26 @@
     <div class="search-car__wrapper">
         <div class="search-car__display-results">
             <ng-container *ngIf="filteredCars.length == 0; then thenBlock; else elseBlock"></ng-container>
-            <ng-template #thenBlock>
-                <li @displayFilteredCars class="search-car__display-link" *ngFor="let car of cars ; let i index" >
-                    <a [routerLink]="['/car-detail', car.id]">
-                        <car-card [car]="i"></car-card>
-                    </a>
-                </li>
-            </ng-template>
-            <ng-template #elseBlock>
-                <li @displayFilteredCars class="search-car__display-link" *ngFor="let car of filteredCars ; let i index">
-                    <a [routerLink]="['/car-detail', car.id]">
-                        <car-card [car]="i"></car-card>
-                    </a>
-                </li>
-            </ng-template>
-            <div *ngFor="let number of galleryCarsButton" class="search-car__gallery-buttons">
-                <button class="search-car__button search-car__button-number">{{number}}</button>
-            </div>
-            <!-- <car-card [car]="i" *ngFor="let car of cars ; let i index"></car-card> -->
+            <mdb-carousel class="carousel-multi-item multi-animation" [animation]="'slide'">
+                <ng-template #thenBlock >
+                    <mdb-carousel-item *ngFor="let cards of slides; let i = index">
+                        <li  class="search-car__display-link" *ngFor="let car of cards ; let i index" >
+                            <a [routerLink]="['/car-detail', car.id]">
+                                <car-card [car]="i"></car-card>
+                            </a>
+                        </li>
+                    </mdb-carousel-item>
+                </ng-template>
+                <ng-template #elseBlock>
+                    <mdb-carousel-item *ngFor="let item of slides; let i = index">
+                        <li  class="search-car__display-link" *ngFor="let car of filteredCars ; let i index">
+                            <a [routerLink]="['/car-detail', car.id]">
+                                <car-card [car]="i"></car-card>
+                            </a>
+                        </li>
+                    </mdb-carousel-item>
+                </ng-template>
+            </mdb-carousel>
         </div>
     </div>
 </section>
