@@ -86,6 +86,8 @@
     &__image {
         width: 100%;
         & > img { 
+            border: none;
+            border-radius: 0.7em;
             height: 640px;
         }
     }

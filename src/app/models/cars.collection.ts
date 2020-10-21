@@ -8,7 +8,7 @@ const car1: Car = {
     year: 2017, 
     mileage: 12345,
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    imageMain: '',
+    imageMain: '../../assets/bmw/common/bmw-series5-3.jpg',
     imageFront: '',
     imageBack: '', 
     imageThumbnail: '../../assets/bmw/thumbnails/bmw_thumbnail_1.jpg'
@@ -21,7 +21,7 @@ const car2: Car = {
     year: 2018, 
     mileage: 999,
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    imageMain: '',
+    imageMain: '../../assets/bmw/common/bmw-series3-1.jpg',
     imageFront: '',
     imageBack: '', 
     imageThumbnail: '../../assets/bmw/thumbnails/bmw_thumbnail_2.jpg'
@@ -34,7 +34,7 @@ const car3: Car = {
     year: 2016, 
     mileage: 78594,
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    imageMain: '',
+    imageMain: '../../assets/bmw/common/bmw-series5-1.jpg',
     imageFront: '',
     imageBack: '', 
     imageThumbnail: '../../assets/bmw/thumbnails/bmw_thumbnail_3.jpg'
@@ -60,7 +60,7 @@ const car5: Car = {
     year: 2015, 
     mileage: 4567,
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    imageMain: '',
+    imageMain: '../../assets/mercedes/common/mercedesbenz-eclass-2.jpg',
     imageFront: '',
     imageBack: '', 
     imageThumbnail: '../../assets/mercedes/thumbnails/mercedes_e_thumbnail_1.jpg'
@@ -73,7 +73,7 @@ const car6: Car = {
     year: 2020, 
     mileage: 111,
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    imageMain: '',
+    imageMain: '../../assets/mercedes/common/mercedesbenz-eclass-1.jpg',
     imageFront: '',
     imageBack: '', 
     imageThumbnail: '../../assets/mercedes/thumbnails/mercedes_e_thumbnail_2.jpg'
@@ -86,22 +86,22 @@ const car7: Car = {
     year: 2020, 
     mileage: 111,
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    imageMain: '',
+    imageMain: '../../assets/bmw/common/bmw-series3-2.jpg',
     imageFront: '',
     imageBack: '', 
-    imageThumbnail: '../../assets/mercedes/thumbnails/mercedes_e_thumbnail_2.jpg'
+    imageThumbnail: '../../assets/bmw/thumbnails/bmw_thumbnail_2.jpg'
 };
 const car8: Car = {
     id: 7,
     manufacture: 'bmw', 
-    model: 'series3', 
-    price: 3400, 
+    model: 'series5', 
+    price: 56300, 
     year: 2020, 
-    mileage: 111,
+    mileage: 9,
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    imageMain: '',
+    imageMain: '../../assets/bmw/common/bmw-series5-4.jpg',
     imageFront: '',
     imageBack: '', 
-    imageThumbnail: '../../assets/mercedes/thumbnails/mercedes_e_thumbnail_2.jpg'
+    imageThumbnail: '../../assets/bmw/thumbnails/bmw_thumbnail_3.jpg'
 };
 export let CAR_COLLECTION = [car1, car2, car3, car4, car5, car6, car7, car8]; 
