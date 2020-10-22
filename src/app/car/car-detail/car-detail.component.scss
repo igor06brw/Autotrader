@@ -145,7 +145,7 @@
                 margin: 0 auto;
                 border: none;
                 border-radius: 0.7em;
-                height: 320px;
+                height: 40vh;
             }
         }
         &__heading {
@@ -176,6 +176,37 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .car-detail {
+        &__image {
+            & > img { 
+                height: 30vh;
+            }
+        }
+        &__description {
+            & > .description {
+                max-height: 12vh;
+            }
+        }
+        &__heading {
+            
+            & > * {
+                font-size: 7vw;
+            }
+            & > .manufacture {
+            }
+        }
+        &__wrapper {
+            padding-top: 10px;
+        }
+    }
+    .heading {
+        font-size: 3vw;
+        &--modified {
         }
     }
 }
