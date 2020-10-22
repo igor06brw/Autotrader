@@ -82,6 +82,7 @@
         margin: 20px auto;
         text-align: center;
         & > * {
+            box-shadow: -4px 4px 5px 1px rgba(0,0,0,0.5);
             background-color:#334455;
             padding: 10px 30px;
             border: 1px solid #334455;
@@ -117,8 +118,10 @@
     }
 }
 
-@media only screen and (max-width: 1170px) {
+@media (max-width: 1170px) {
     .car-detail {
+        &__article {
+        }
         &__wrapper {
             padding: 20px;
         }
@@ -164,10 +167,12 @@
         }
     }
 }
-
-
-@media only screen and (max-width: 576px) {
+@media (max-width: 576px) {
     .car-detail {
+        &__article {
+            top: 10%;
+            height: 82.5vh;
+        }
         &__col {
            padding: 0 30px;
         }
@@ -199,3 +204,51 @@
         }
     }
 }
+
+@media (orientation: landscape) and (max-width: 992px) {
+    .car-detail {
+        &__article {
+            top: 20%;
+            height: 75vh;
+        }
+        &__col {
+            padding: 0 10px;
+            &:nth-of-type(1) {
+                width: 40%;
+            }
+
+            &:nth-of-type(2) {
+                flex-direction: column;
+                justify-content: space-evenly;
+                width: 60%;
+            }
+        }
+        &__heading {
+            padding-top: 10px;
+            & > * {
+                text-align: left;
+                color: #333333;
+                text-transform: uppercase;
+                font-size: 4vw;
+            }
+        }
+        &__description {
+            padding-top: 10px;
+        }
+        &__button {
+            & > * {
+                box-shadow: -4px 4px 5px 1px rgba(0,0,0,0.5);
+                border-radius: 4px;
+            }
+        }
+        &__image {
+            width: 100%;
+            & > img { 
+                border: none;
+                border-radius: 0.7em;
+                height: 50vh;
+            }
+        }
+    }
+  }
+  
