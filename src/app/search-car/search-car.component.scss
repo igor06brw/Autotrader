@@ -104,28 +104,14 @@
     }
 }
 
-
-@media (max-width: 768px) {
-    .search-car {
-        &__form {
-            &-wrapper {
-                &:nth-last-child(n+5) {
-                    min-width: 12em;
-                }
-                &:last-of-type {
-                    width: auto;
-                }
-            }
-        }
-        &__show-result {
-            margin: 0 auto;
-            width: 40vw;
-        }
-        &__display-results {
-            height: 959px;
-        }
+.carousel-item {
+    &.active, &.carousel-item-right, &.carousel-item-next {
+      display: flex !important;
+      flex-wrap: wrap;
     }
 }
+
+
 @media (min-width: 992px) {
     .search-car {
         &__form {
@@ -184,32 +170,42 @@
         }
     }
 }
-@media (min-width: 993px) {
+
+@media only screen and (max-width: 480px) and (orientation: portrait) {
     .search-car {
         &__form {
+            & > * {
+                min-width: 20vw; 
+                width: 30%;
+                padding: 15px 5px 5px 5px;
+            }
             &-wrapper {
                 &:nth-last-child(n+5) {
-                    min-width: 12em;
+                    width: 50%;
+                }
+                &:nth-of-type(n+3) {
+                    width: 33%
                 }
                 &:last-of-type {
-                    width: auto;
+                    padding-top: 30px;
+                    width: 20em;
                 }
             }
         }
-        &__display-results {
-           height: 320px;
+        &__input-label {
+            
+            padding-bottom: 3px;
         }
-        &__display-link {
-            max-width: 33%;
+        &__input {
+            height: 40px;
+            
+        }
+        &__show-result {
+            margin: 0 auto;
+            width: 40vw;
+        }
+        &__display-results {
+            height: 959px;
         }
     }
 }
-
-
-
-.carousel-item {
-    &.active, &.carousel-item-right, &.carousel-item-next {
-      display: flex !important;
-      flex-wrap: wrap;
-    }
-  }
