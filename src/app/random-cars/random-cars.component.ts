@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CAR_COLLECTION } from '../models/cars.collection';
 
 @Component({
   selector: 'app-random-cars',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RandomCarsComponent implements OnInit {
 
+  cars: Array<Object> = CAR_COLLECTION.reverse();
+  
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.cars);
   }
 
 }
