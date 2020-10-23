@@ -108,7 +108,7 @@
         }
     }
 
-    @for $i from 2 through 4{
+    @for $i from 2 through 5{
         &__link:nth-of-type(#{$i}) {
             grid-area: link + ($i);
         }
@@ -119,6 +119,22 @@
         grid-template-areas: 'highlight link2 link3'
                              'highlight link4 link5';
         grid-gap: 40px;
+    }
+}
+
+@media only screen and (max-width: 480px) and (orientation: portrait) {
+    .random-cars {
+        &__section {
+            margin-top: 45%;
+        }
+        &__car-wrapper {
+            display: grid;
+            grid-template-areas: 'highlight highlight'
+                                    'link2 link3'
+                                    'link4 link5';
+            grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
     }
 }
 
