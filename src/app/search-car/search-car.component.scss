@@ -177,7 +177,7 @@
             & > * {
                 min-width: 20vw; 
                 width: 30%;
-                padding: 15px 5px 5px 5px;
+                padding: 15px 10px 5px 10px;
             }
             &-wrapper {
                 &:nth-last-child(n+5) {
@@ -193,19 +193,22 @@
             }
         }
         &__input-label {
-            
             padding-bottom: 3px;
-        }
-        &__input {
-            height: 40px;
-            
         }
         &__show-result {
             margin: 0 auto;
-            width: 40vw;
+            width: 42vw;
         }
+
+
+
+
         &__display-results {
-            height: 959px;
+            max-height: auto;
+            height: auto;
+        }
+        &__display-link { 
+            max-width: 100%;
         }
     }
 }
