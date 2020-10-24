@@ -21,13 +21,14 @@
     }
     &__show-result {
         border: none;
+        width: 10vw;
         height: 40px;
         font-size: 0.9rem;
         text-transform: uppercase;
         font-weight: 700;
         color: #fff;
         background: #2c3966;
-        margin-top: 25px;
+        margin: auto;
     }
     &__wrapper {
         background-color: #fff;
@@ -55,8 +56,8 @@
             width: 22%;
             min-width: 8em;
         }
-        &:nth-last-of-type() {
-            margin-top: 40px;
+        &:nth-of-type(6) {
+            padding: 0 20px;
         }
     }
     &__input-label {
@@ -91,7 +92,7 @@
         text-decoration: none;
         list-style: none;
         display: flex;
-        max-width: 33%;
+        max-width: 25%;
         flex-wrap: wrap;
         border-bottom: 1px solid rgba(114, 114, 114, 0.2);
 
@@ -104,72 +105,59 @@
     }
 }
 
-.carousel-item {
-    &.active, &.carousel-item-right, &.carousel-item-next {
-      display: flex !important;
-      flex-wrap: wrap;
-    }
-}
-
-
-@media (min-width: 992px) {
+@media only screen and (max-width: 1170px) and (orientation: portrait) {
     .search-car {
         &__form {
             &-wrapper {
-                &:nth-last-child(n+5) {
-                    min-width: 12em;
-                }
+                padding: 10px 10px;
                 &:last-of-type {
+                    
                     width: auto;
                 }
             }
         }
-        &__show-result {
-            margin: 0 auto;
-            width: 40vw;
-        }
-        &__display-results {
-            height: 959px;
-        }
     }
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 992px) {
+@media only screen and (max-width: 740px) and (orientation: portrait) {
     .search-car {
         &__form {
+            & > * {
+                min-width: 20vw; 
+                width: 30%;
+            }
             &-wrapper {
                 &:nth-last-child(n+5) {
+                    width: 50%;
+                }
+                &:nth-of-type(n+3) {
+                    width: 33%
                 }
                 &:last-of-type {
+                    width: 20em;
                 }
             }
         }
+        &__input-label {
+            padding-bottom: 3px;
+        }
         &__show-result {
+            margin: auto auto;
+            width: 42vw;
         }
         &__display-results {
-            height: 480px;
+            max-height: auto;
+            height: auto;
         }
-    }
-}
-@media (max-width: 992px) {
-    .search-car {
-        &__form {
-            &-wrapper {
-                &:nth-last-child(n+5) {
-                    min-width: 12em;
-                }
-                &:last-of-type {
-                    width: auto;
-                }
+        &__display-link { 
+            max-width: 100%;
+
+            * > a {
+                width: 100vw;
             }
         }
-        &__display-results {
-           height: 480px;
-        }
-        &__display-link {
-            max-width: 50%;
-        }
     }
 }
+
 
 @media only screen and (max-width: 480px) and (orientation: portrait) {
     .search-car {
@@ -196,19 +184,49 @@
             padding-bottom: 3px;
         }
         &__show-result {
-            margin: 0 auto;
+            margin: auto;
             width: 42vw;
         }
-
-
-
-
         &__display-results {
             max-height: auto;
-            height: auto;
+            height: 446px;
         }
         &__display-link { 
             max-width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1170px) and (orientation: landscape) { 
+    .search-car {
+        &__form {
+            &-wrapper {
+                &:nth-last-child(n+5) {
+                    width: 45%;
+                }
+                &:nth-of-type(n+3) {
+                    width: 30%
+                }
+                &:last-of-type {
+                    padding-top: 30px;
+                    width: 20em;
+                }
+                &:nth-of-type(6) {
+                    padding: 0;
+                    margin: auto;
+                }
+            }
+        }
+        &__show-result {
+            width: 100%;
+            margin: auto;
+        }
+        &__display-results {
+            max-height: auto;
+            height: 460px;
+        }
+        &__display-link { 
+            max-width: 23%;
         }
     }
 }

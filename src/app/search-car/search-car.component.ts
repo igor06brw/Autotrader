@@ -68,7 +68,11 @@ export class SearchCarComponent implements OnInit {
       this.scrHeight = window.innerHeight;
       this.scrWidth = window.innerWidth;
       if(480 >= this.scrWidth) {
-        this.slides = this.chunk(this.filteredCars, 3);
+        return this.slides = this.chunk(this.filteredCars, 3);
+      } else if (740 >= this.scrWidth && this.scrWidth > 481) {
+        return this.slides = this.chunk(this.filteredCars, 3);
+      } else if (9999 >= this.scrWidth && this.scrWidth > 741) {
+        return this.slides = this.chunk(this.filteredCars, 4);
       }
   }
 
@@ -110,7 +114,7 @@ export class SearchCarComponent implements OnInit {
 
   ngOnInit(): void {
     this.filteredCars = this.cars;
-    this.slides = this.chunk(this.filteredCars, 6);
+    this.slides = this.chunk(this.filteredCars, 3);
     this.getScreenSize();
   }
 }
