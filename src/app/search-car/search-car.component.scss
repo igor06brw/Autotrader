@@ -170,6 +170,47 @@
         }
     }
 }
+@media only screen and (max-width: 740px) and (orientation: portrait) {
+    .search-car {
+        &__form {
+            & > * {
+                min-width: 20vw; 
+                width: 30%;
+                padding: 15px 10px 5px 10px;
+            }
+            &-wrapper {
+                &:nth-last-child(n+5) {
+                    width: 50%;
+                }
+                &:nth-of-type(n+3) {
+                    width: 33%
+                }
+                &:last-of-type {
+                    padding-top: 30px;
+                    width: 20em;
+                }
+            }
+        }
+        &__input-label {
+            padding-bottom: 3px;
+        }
+        &__show-result {
+            margin: 0 auto;
+            width: 42vw;
+        }
+        &__display-results {
+            max-height: auto;
+            height: auto;
+        }
+        &__display-link { 
+            max-width: 100%;
+
+            * > a {
+                width: 100vw;
+            }
+        }
+    }
+}
 
 @media only screen and (max-width: 480px) and (orientation: portrait) {
     .search-car {
@@ -199,10 +240,6 @@
             margin: 0 auto;
             width: 42vw;
         }
-
-
-
-
         &__display-results {
             max-height: auto;
             height: auto;
