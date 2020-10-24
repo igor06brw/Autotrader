@@ -21,6 +21,7 @@
     }
     &__show-result {
         border: none;
+        width: 10vw;
         height: 40px;
         font-size: 0.9rem;
         text-transform: uppercase;
@@ -55,8 +56,8 @@
             width: 22%;
             min-width: 8em;
         }
-        &:nth-last-of-type() {
-            margin-top: 40px;
+        &:nth-of-type(6) {
+            padding: 0 20px;
         }
     }
     &__input-label {
