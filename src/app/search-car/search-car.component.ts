@@ -71,6 +71,8 @@ export class SearchCarComponent implements OnInit {
         return this.slides = this.chunk(this.filteredCars, 3);
       } else if (740 >= this.scrWidth && this.scrWidth > 481) {
         return this.slides = this.chunk(this.filteredCars, 3);
+      } else if (9999 >= this.scrWidth && this.scrWidth > 741) {
+        return this.slides = this.chunk(this.filteredCars, 4);
       }
   }
 
