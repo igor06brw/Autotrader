@@ -1,6 +1,7 @@
 .car {
     &__card {
         width: 100%;
+        height: 19vh;
         padding: 20px 10px 0px 10px;
     }
     &__link {
@@ -24,7 +25,8 @@
         }
     }
     &__heading {
-        font-size: 0.8em;
+        font-weight: 700;
+        font-size: 0.775rem;
     }
     &__description {
         font-size: 0.7em;
