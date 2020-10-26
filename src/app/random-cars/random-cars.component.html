@@ -1,69 +1,17 @@
 <section class="random-cars__section">
     <div class="random-cars__wrapper">
         <div class="random-cars__car-wrapper">
-            <a href="" class="random-cars__link random-cars__link-highlight">
+            <a href="" class="random-cars__link" *ngFor="let car of cars | slice:0:5; first as isFirst" [ngClass]="{ 'random-cars__link-highlight': isFirst }">
                 <div class="random-cars__col">
-                    <img src="{{cars[0].imageMain}}" alt="" class="random-cars__car-image">
+                    <img src="{{car.imageMain}}" alt="" class="random-cars__car-image">
                 </div>
                 <div class="random-cars__col">
-                    <h3 class="random-cars__car-heading">{{cars[0].manufacture | uppercase}} {{cars[0].model | uppercase}}</h3>
-                    <p class="random-cars__car-price">${{cars[0].price}}</p>
+                    <h3 class="random-cars__car-heading">{{car.manufacture | uppercase}} {{car.model | uppercase}}</h3>
+                    <p class="random-cars__car-price">${{car.price}}</p>
                 </div>
                 <div class="random-cars__col">
-                    <p class="random-cars__car-production">{{cars[0].year}}</p>
-                    <p class="random-cars__car-mileage">{{cars[0].mileage}}</p>
-                </div>
-            </a>
-            <a href="" class="random-cars__link">
-                <div class="random-cars__col">
-                    <img src="../../assets/bmw-seria-5-g30-g31.jpg" alt="" class="random-cars__car-image">
-                </div>
-                <div class="random-cars__col">
-                    <h3 class="random-cars__car-heading">BMW 5 G30</h3>
-                    <p class="random-cars__car-price">$30000</p>
-                </div>
-                <div class="random-cars__col">
-                    <h3 class="random-cars__car-production">2016</h3>
-                    <p class="random-cars__car-mileage">50000</p>
-                </div>
-            </a>
-            <a href="" class="random-cars__link">
-                <div class="random-cars__col">
-                    <img src="../../assets/bmw-seria-5-g30-g31.jpg" alt="" class="random-cars__car-image">
-                </div>
-                <div class="random-cars__col">
-                    <h3 class="random-cars__car-heading">BMW 5 G30</h3>
-                    <p class="random-cars__car-price">$30000</p>
-                </div>
-                <div class="random-cars__col">
-                    <h3 class="random-cars__car-production">2016</h3>
-                    <p class="random-cars__car-mileage">50000</p>
-                </div>
-            </a>
-            <a href="" class="random-cars__link">
-                <div class="random-cars__col">
-                    <img src="../../assets/bmw-seria-5-g30-g31.jpg" alt="" class="random-cars__car-image">
-                </div>
-                <div class="random-cars__col">
-                    <h3 class="random-cars__car-heading">BMW 5 G30</h3>
-                    <p class="random-cars__car-price">$30000</p>
-                </div>
-                <div class="random-cars__col">
-                    <h3 class="random-cars__car-production">2016</h3>
-                    <p class="random-cars__car-mileage">50000</p>
-                </div>
-            </a>
-            <a href="" class="random-cars__link">
-                <div class="random-cars__col">
-                    <img src="../../assets/bmw-seria-5-g30-g31.jpg" alt="" class="random-cars__car-image">
-                </div>
-                <div class="random-cars__col">
-                    <h3 class="random-cars__car-heading">BMW 5 G30</h3>
-                    <p class="random-cars__car-price">$30000</p>
-                </div>
-                <div class="random-cars__col">
-                    <h3 class="random-cars__car-production">2016</h3>
-                    <p class="random-cars__car-mileage">50000</p>
+                    <p class="random-cars__car-production">{{car.year}}</p>
+                    <p class="random-cars__car-mileage">{{car.mileage}}</p>
                 </div>
             </a>
         </div>

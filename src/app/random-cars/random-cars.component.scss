@@ -132,11 +132,73 @@
             grid-template-areas: 'highlight highlight'
                                     'link2 link3'
                                     'link4 link5';
-            grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 20px;
+            grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+            grid-gap: 10px;
+
+            &
+
+            & > a {
+                width: 48.5vw;
+            }
+            & > a:nth-child(1) {
+                width: 100vw;
+            }
+        }
+        &__col {
+            &:nth-of-type(2) {
+
+                *  {
+                    h3 {
+                        margin-right: 10vw; 
+                    }
+                    font-size: 3vw;
+                }
+            }
+            &:nth-of-type(3) {
+
+                *  {
+   
+                }
+            }
+        }
+        &__link {    
+            &-highlight {
+                > .random-cars__col {
+                    &:nth-of-type(2) {
+                        h3 {
+                        margin-right: 1vw; 
+                        }
+                    }
+                }
+            }
         }
     }
 }
+@media all and (max-width: 360px) and (orientation: portrait) {
+    .random-cars {
+        &__col {
+            &:nth-of-type(2) {
+                flex-direction: column;
+                height: 100px;
+                *  {
+                    font-weight: 400;
+                    font-size: 1em;
+                }
+            }
+            &:nth-of-type(3) {
+                flex-direction: column;
+                height: 50px;
+                *  {
+                    font-weight: 400;
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
+
+
+
 
 
 @media only screen and (min-device-width: 668px) and (max-device-width: 992px) {
@@ -150,6 +212,7 @@
     .random-cars {
         &__section {
             padding-top: 150px;
+            
         }
     }
 }
