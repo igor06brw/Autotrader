@@ -1,10 +1,21 @@
 @import "../../variables.scss";
 
+@keyframes backgroundOne {
+    from {opacity: 0; background-image: url(../../assets/header-2.jpg);}
+    to {opacity: 1; background-image: url(../../assets/header-1.jpg);}
+}
+@keyframes backgroundTwo {
+    from {opacity: 0; background-image: url(../../assets/header-2.jpg);}
+    to {opacity: 1; background-image: url(../../assets/header-1.jpg);}
+}
+
 
 .header {
-    transition: all .2s ease-in-out;
+    opacity: 1;
+    transition: all .6s ease-in-out;
     width: 100vw;
     height: 100vh;
+    background-image: url('../../assets/header-2.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
