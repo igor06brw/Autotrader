@@ -1,14 +1,8 @@
 @import "../../variables.scss";
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 
 .header {
-    background-image: url(../../assets/header-2.jpg);
+    transition: all .2s ease-in-out;
     width: 100vw;
     height: 100vh;
     background-position: center;
