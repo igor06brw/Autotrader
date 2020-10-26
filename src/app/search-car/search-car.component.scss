@@ -176,7 +176,7 @@
                 }
                 &:last-of-type {
                     padding-top: 30px;
-                    width: 20em;
+                    width: 100%;
                 }
             }
         }
@@ -185,13 +185,14 @@
         }
         &__show-result {
             margin: auto;
-            width: 42vw;
+            width: 50%;
         }
         &__display-results {
             max-height: auto;
             height: 473px;
         }
         &__display-link { 
+            background-color: #fff;
             max-width: 100%;
         }
     }

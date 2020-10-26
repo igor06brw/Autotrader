@@ -91,36 +91,23 @@
         }
      }  
 }
-
-
-
-
-@media (max-width: 768px) { 
+@media only screen and (max-width: 480px) and (orientation: portrait) {
     .header {
-        width: 100%;
-        height: 165vh;
-        &__wrapper {
-            padding: 210px 20px 0 20px;
-
-            &--readmore {
-                padding: 10px 0;
-            }
-            &--infocar {
-                padding: 10px 0;
-            }
+        width: 100vw;
+        height: 106vh; 
+        &__content {
         }
-    }
-    .justify-header {
-        .header {
-            &__wrapper {
-                padding: 320px 20px 0 20px;
-                &--readmore {
-                    padding: 10px 0;
-                }
-                &--infocar {
-                    padding: 10px 0;
-                }
-            }
-         }  
+        &__wrapper { 
+            &:nth-child(1) {
+                display: block;
+
+
+                position: relative;
+                top: 40%;
+                transform: translateY(-50%);
+
+                padding: 30px 20px;
+             }
+        }
     }
 }

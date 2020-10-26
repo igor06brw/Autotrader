@@ -117,7 +117,7 @@
     }
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1170px) and (orientation: portrait) {
     .car-detail {
         &__article {
         }
@@ -166,11 +166,11 @@
         }
     }
 }
-@media (max-width: 576px) {
+@media (max-width: 576px)  {
     .car-detail {
         &__article {
             top: 10%;
-            height: 82.5vh;
+            height: 89vh;
         }
         &__col {
            padding: 0 30px;
