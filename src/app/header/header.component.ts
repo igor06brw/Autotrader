@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
         this.backgroundOne = true;
         this.header.nativeElement.style.backgroundImage = 'url(../../assets/header-2.jpg)';
       }
-    }, 2000);
+    }, 8000);
   }
 
   
