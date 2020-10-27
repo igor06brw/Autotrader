@@ -8,7 +8,8 @@ import { CAR_COLLECTION } from '../models/cars.collection';
 })
 export class RandomCarsComponent implements OnInit {
 
-  cars: any = CAR_COLLECTION;
+  cars: any = CAR_COLLECTION.reverse();
+  carsReverse: any = this.cars.reverse();
   
 
   constructor() { }
