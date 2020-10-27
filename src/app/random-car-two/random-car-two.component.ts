@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CAR_COLLECTION } from '../models/cars.collection';
 
 @Component({
   selector: 'app-random-car-two',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./random-car-two.component.scss']
 })
 export class RandomCarTwoComponent implements OnInit {
+
+  cars: any = CAR_COLLECTION;
 
   constructor() { }
 

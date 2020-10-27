@@ -4,91 +4,23 @@
             <h2 class="random-cars-two__heading">Featured</h2>
         </div>
         <div class="random-cars-two__wrapper-car">
-            <div class="random-cars-two__wrapper-arrow">
-                <a href="" class="random-cars-two__arrow-link"><i class="random-cars-two__arrow-icon"></i><</a>
-            </div>
-            <a href="" class="random-cars-two__link">
-                <div class="random-cars-two__col">
-                    <img src="../../assets/bmw-seria-5-g30-g31.jpg" alt="" class="random-cars-two__car-image">
-                </div>
-                <div class="random-cars-two__col">
-                    <h3 class="random-cars-two__car-heading">BMW 5 G30</h3>
-                    <p class="random-cars-two__car-price">$30000</p>
-                </div>
-                <div class="random-cars-two__col">
-                    <p class="random-cars__car-production">2016</p>
-                    <p class="random-cars__car-mileage">50000 km</p>
-                </div>
-            </a>
-            <a href="" class="random-cars-two__link">
-                <div class="random-cars-two__col">
-                    <img src="../../assets/bmw-seria-5-g30-g31.jpg" alt="" class="random-cars-two__car-image">
-                </div>
-                <div class="random-cars-two__col">
-                    <h3 class="random-cars-two__car-heading">BMW 5 G30</h3>
-                    <p class="random-cars-two__car-price">$30000</p>
-                </div>
-                <div class="random-cars-two__col">
-                    <p class="random-cars__car-production">2016</p>
-                    <p class="random-cars__car-mileage">50000 km</p>
-                </div>
-            </a>
-            <a href="" class="random-cars-two__link">
-                <div class="random-cars-two__col">
-                    <img src="../../assets/bmw-seria-5-g30-g31.jpg" alt="" class="random-cars-two__car-image">
-                </div>
-                <div class="random-cars-two__col">
-                    <h3 class="random-cars-two__car-heading">BMW 5 G30</h3>
-                    <p class="random-cars-two__car-price">$30000</p>
-                </div>
-                <div class="random-cars-two__col">
-                    <p class="random-cars__car-production">2016</p>
-                    <p class="random-cars__car-mileage">50000 km</p>
-                </div>
-            </a>
-
-            <a href="" class="random-cars-two__link">
-                <div class="random-cars-two__col">
-                    <img src="../../assets/bmw-seria-5-g30-g31.jpg" alt="" class="random-cars-two__car-image">
-                </div>
-                <div class="random-cars-two__col">
-                    <h3 class="random-cars-two__car-heading">BMW 5 G30</h3>
-                    <p class="random-cars-two__car-price">$30000</p>
-                </div>
-                <div class="random-cars-two__col">
-                    <p class="random-cars__car-production">2016</p>
-                    <p class="random-cars__car-mileage">50000 km</p>
-                </div>
-            </a>
-            <a href="" class="random-cars-two__link">
-                <div class="random-cars-two__col">
-                    <img src="../../assets/bmw-seria-5-g30-g31.jpg" alt="" class="random-cars-two__car-image">
-                </div>
-                <div class="random-cars-two__col">
-                    <h3 class="random-cars-two__car-heading">BMW 5 G30</h3>
-                    <p class="random-cars-two__car-price">$30000</p>
-                </div>
-                <div class="random-cars-two__col">
-                    <p class="random-cars__car-production">2016</p>
-                    <p class="random-cars__car-mileage">50000 km</p>
-                </div>
-            </a>
-            <a href="" class="random-cars-two__link">
-                <div class="random-cars-two__col">
-                    <img src="../../assets/bmw-seria-5-g30-g31.jpg" alt="" class="random-cars-two__car-image">
-                </div>
-                <div class="random-cars-two__col">
-                    <h3 class="random-cars-two__car-heading">BMW 5 G30</h3>
-                    <p class="random-cars-two__car-price">$30000</p>
-                </div>
-                <div class="random-cars-two__col">
-                    <p class="random-cars__car-production">2016</p>
-                    <p class="random-cars__car-mileage">50000 km</p>
-                </div>
-            </a>
-            <div class="random-cars-two__wrapper-arrow">
-                <a href="" class="random-cars-two__arrow-link"><i class="random-cars-two__arrow-icon">></i></a>
-            </div>
+            <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [animation]="'fade'">
+                <mdb-slide *ngFor="let car of cars; let i = index" class="animated fadeIn">
+                    <a href="" class="random-cars-two__link">
+                        <div class="random-cars-two__col">
+                            <img src="{{car.imageThumbnail}}" alt="" class="random-cars-two__car-image">
+                        </div>
+                        <div class="random-cars-two__col">
+                            <h3 class="random-cars-two__car-heading">{{car.manufacture | uppercase}} {{car.model | uppercase}}</h3>
+                            <p class="random-cars-two__car-price">${{car.price}}</p>
+                        </div>
+                        <div class="random-cars-two__col">
+                            <p class="random-cars__car-production">{{car.year}}</p>
+                            <p class="random-cars__car-mileage">{{car.mileage}}</p>
+                        </div>
+                    </a>
+                </mdb-slide>
+            </mdb-carousel>
         </div>
       </div>
 </section>
