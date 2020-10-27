@@ -1,7 +1,7 @@
 <section class="random-cars__section">
     <div class="random-cars__wrapper">
         <div class="random-cars__car-wrapper">
-            <a [routerLink]="['/car-detail', car.id]" class="random-cars__link" *ngFor="let car of cars.reverse() | slice:0:5 ; first as isFirst" [ngClass]="{ 'random-cars__link-highlight': isFirst }">
+            <a [routerLink]="['/car-detail', car.id]" class="random-cars__link" *ngFor="let car of carsReverse| slice:0:5 ; first as isFirst" [ngClass]="{ 'random-cars__link-highlight': isFirst }">
                 <div class="random-cars__col">
                     <img src="{{car.imageMain}}" alt="" class="random-cars__car-image">
                 </div>
