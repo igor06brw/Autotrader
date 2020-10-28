@@ -4,9 +4,9 @@
             <h2 class="random-cars-two__heading">Featured</h2>
         </div>
         <div class="random-cars-two__wrapper-car">
-            <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [animation]="'fade'">
-                <mdb-slide *ngFor="let car of cars; let i = index" class="animated fadeIn">
-                    <a href="" class="random-cars-two__link">
+            <mdb-carousel [isControls]="true" class="carousel slide carousel-multi-item v-2" [animation]="'fade'">
+                <mdb-slide *ngFor="let card of galleryCars; let i = index" class="animated fadeIn">
+                    <a href="#!"*ngFor="let car of card; let i index" class="random-cars-two__link">
                         <div class="random-cars-two__col">
                             <img src="{{car.imageThumbnail}}" alt="" class="random-cars-two__car-image">
                         </div>
