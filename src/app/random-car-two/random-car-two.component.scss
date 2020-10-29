@@ -148,6 +148,10 @@
 
 @media only screen and (max-width: 480px) {
     .random-cars-two {
+        &__section {
+            margin: 3em auto 0 auto;
+            padding: 1em 0 1em 0;
+        }
         &__link { 
             margin: 0 auto;
             width: 60%;
@@ -173,6 +177,10 @@
             &:nth-of-type(3) {
                 height: 30px;
             }
+        }
+        &__heading {
+            font-size: 1.5em;
+            padding: 1.15em 0;
         }
     }
 }
