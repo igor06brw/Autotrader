@@ -5,7 +5,7 @@
         </div>
         <div class="random-cars-two__wrapper-car">
             <mdb-carousel [isControls]="true" class="carousel slide carousel-multi-item v-2" [animation]="'slide'">
-                <mdb-slide *ngFor="let card of galleryCars; let i = index" class="animated fadeIn">
+                <mdb-slide #displayCar *ngFor="let card of galleryCars; let i = index" class="animated fadeIn">
                     <a href="#!"*ngFor="let car of card; let i index" class="random-cars-two__link">
                         <div class="random-cars-two__col">
                             <img src="{{car.imageThumbnail}}" alt="" class="random-cars-two__car-image">

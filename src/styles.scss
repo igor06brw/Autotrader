@@ -20,7 +20,7 @@ body {
 
 .carousel-item {
     &.active, &.carousel-item-right, &.carousel-item-next {
-      display: flex !important;
+      display: flex;
       flex-wrap: wrap;
     }
 }
@@ -48,8 +48,9 @@ app-random-car-two {
         width: 100%;
         .carousel-inner {
             width: 80%;
-            height: 240px;
+            height: 40vh;
             margin: 0 auto;
+            max-height: 300px;
             .carousel-item {
             }
         }
