@@ -93,3 +93,30 @@
     display: flex;
     flex: 1 1 auto;
 }
+
+@media only screen and (max-width: 480px) {
+    .wrapper { 
+        flex-direction: row;
+        flex-wrap: wrap;
+        &:nth-of-type(2) {
+            flex-direction: column;
+            .col {
+                & > * {
+                    text-align: center;
+                }
+                width: 100%;
+            }
+        }
+    }
+    .stores { 
+        display: flex;
+        flex-direction: column;
+        img {
+            padding: 0.625em 0;
+            width: 100%;
+        }
+    }
+    .col {
+        width: 45%;
+    }
+}
