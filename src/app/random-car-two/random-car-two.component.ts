@@ -24,9 +24,9 @@ export class RandomCarTwoComponent implements OnInit {
       if(480 >= this.scrWidth) {
         return this.galleryCars = this.chunk(this.cars, 1);
       } else if (740 >= this.scrWidth && this.scrWidth > 481) {
-        return this.slides = this.chunk(this.filteredCars, 3);
+        return this.galleryCars = this.chunk(this.cars, 3);
       } else if (9999 >= this.scrWidth && this.scrWidth > 741) {
-        return this.slides = this.chunk(this.filteredCars, 4);
+        return this.galleryCars = this.chunk(this.cars, 4);
       }
   }
 
