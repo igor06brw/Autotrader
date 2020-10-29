@@ -20,7 +20,7 @@ body {
 
 .carousel-item {
     &.active, &.carousel-item-right, &.carousel-item-next {
-      display: flex !important;
+      display: flex;
       flex-wrap: wrap;
     }
 }
@@ -44,17 +44,15 @@ app-random-car-two {
         display: none;
     }
     .carousel-multi-item {
+        margin: 0 auto;
         width: 100%;
+        .carousel-inner {
+            width: 80%;
+            height: 40vh;
+            margin: 0 auto;
+            max-height: 300px;
+            .carousel-item {
+            }
+        }
     }
-    // .controls-top {
-    //     position: absolute;
-    //     top: 30%;
-    //     left: 50%;
-    //     z-index: 1000;
-    //     width: 150%;
-    //     transform: translate(-50%,-50%);
-    //     & > a:nth-child(2) {
-    //         float: right;
-    //     }
-    // }
 }

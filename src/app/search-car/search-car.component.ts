@@ -13,7 +13,6 @@ import { MILEAGES } from '../base/mileages';
 import { CAR_COLLECTION } from '../models/cars.collection';
 
 import { trigger, transition, animate, style } from '@angular/animations';
-import { WindowService } from '../services/window.service';
 
 
 @Component({
