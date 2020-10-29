@@ -1,54 +1,22 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { Subject, BehaviorSubject, fromEvent } from 'rxjs';
-import { takeUntil, debounceTime } from 'rxjs/operators';
+import { Injectable, OnInit } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WindowService implements OnDestroy {
-  private _unsubscriber$: Subject<any> = new Subject();
-  public screenWidth$: BehaviorSubject<number> = new BehaviorSubject(null);
-  public mediaBreakpoint$: BehaviorSubject<string> = new BehaviorSubject(null);
+export class WindowService implements OnInit {
+  
 
   constructor() {}
-
-  init() {
-    this._setScreenWidth(window.innerWidth);
-    this._setMediaBreakpoint(window.innerWidth);
-    fromEvent(window, 'resize')
-      .pipe(
-        debounceTime(1000),
-        takeUntil(this._unsubscriber$)
-      ).subscribe((evt: any) => {
-        this._setScreenWidth(evt.target.innerWidth);
-        this._setMediaBreakpoint(evt.target.innerWidth);
-      });
-      console.log(this._setScreenWidth(window.innerWidth))
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
-  ngOnDestroy() {
-    this._unsubscriber$.next();
-    this._unsubscriber$.complete();
-  }
-
-  private _setScreenWidth(width: number): void {
-    this.screenWidth$.next(width);
-  }
-
-  private _setMediaBreakpoint(width: number): void {
-    if (width < 576) {
-      this.mediaBreakpoint$.next('xs');
-    } else if (width >= 576 && width < 768) {
-      this.mediaBreakpoint$.next('sm');
-    } else if (width >= 768 && width < 992) {
-      this.mediaBreakpoint$.next('md');
-    } else if (width >= 992 && width < 1200) {
-      this.mediaBreakpoint$.next('lg');
-    } else if (width >= 1200 && width < 1600) {
-      this.mediaBreakpoint$.next('xl');
-    } else {
-      this.mediaBreakpoint$.next('xxl');
+  chuck(arr: any, chunkSize:any) {
+    let R = [];
+    for (let i = 0, len = arr.length; i < len; i += chunkSize) {
+      R.push(arr.slice(i, i + chunkSize));
     }
+    return R;
   }
 
 }

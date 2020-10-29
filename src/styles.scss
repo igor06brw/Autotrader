@@ -44,17 +44,12 @@ app-random-car-two {
         display: none;
     }
     .carousel-multi-item {
+        margin: 0 auto;
         width: 100%;
+        .carousel-inner {
+            width: 80%;
+            height: 240px;
+            margin: 0 auto;
+        }
     }
-    // .controls-top {
-    //     position: absolute;
-    //     top: 30%;
-    //     left: 50%;
-    //     z-index: 1000;
-    //     width: 150%;
-    //     transform: translate(-50%,-50%);
-    //     & > a:nth-child(2) {
-    //         float: right;
-    //     }
-    // }
 }
