@@ -1,6 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { CAR_COLLECTION } from '../models/cars.collection';
-import { WindowService } from '../services/window.service';
 
 @Component({
   selector: 'app-random-car-two',
@@ -30,7 +29,7 @@ export class RandomCarTwoComponent implements OnInit {
       }
   }
 
-  constructor(private windowService: WindowService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.galleryCars = this.chunk(this.cars, 7);
